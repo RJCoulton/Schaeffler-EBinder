@@ -1,0 +1,72 @@
+﻿@using EBinder.App_GlobalResources
+@{
+    ViewBag.Title = Resource.EBinderTitle;
+}
+<table class="index-table">
+    <tr>
+        <!--images-->
+        <td class="index-table-cell">
+            <a href="@Url.Action("Index", "Region")">
+                <div class="index-table-image"><img src="@Url.Content("~/Images/Icons/Region.png")" alt="@Resource.Regions"/></div>
+                <div class="index-table-label">@Resource.Regions</div>
+            </a>
+        </td>
+        <td class="index-table-cell">
+            <a href="@Url.Action("Index", "Plant")">
+                <div class="index-table-image"><img src="@Url.Content("~/Images/Icons/Plant.png")" alt="@Resource.Plants" /></div>
+                <div class="index-table-label">@Resource.Plants</div>
+            </a>
+        </td>
+        <td class="index-table-cell">
+            <a href="@Url.Action("Index", "Department")">
+                <div class="index-table-image"><img src="@Url.Content("~/Images/Icons/Department.png")" alt="@Resource.Departments" /></div>
+                <div class="index-table-label">@Resource.Departments</div>
+            </a>
+        </td>
+        <td class="index-table-cell">
+            <a href="@Url.Action("Index", "Cell")">
+                <div class="index-table-image"><img src="@Url.Content("~/Images/Icons/Cell.png")" alt="@Resource.Cells" /></div>
+                <div class="index-table-label">@Resource.Cells</div>
+            </a>
+        </td>
+        <td class="index-table-cell">
+            <a href="@Url.Action("Index", "User")">
+                <div class="index-table-image"><img src="@Url.Content("~/Images/Icons/User.png")" alt="@Resource.Users" /></div>
+                <div class="index-table-label">@Resource.Users</div>
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <!--images-->
+        <td class="index-table-cell">
+            <a href="@Url.Action("Index", "Reference")">
+                <div class="index-table-image"><img src="@Url.Content("~/Images/Icons/Reference.png")" alt="@Resource.References" /></div>
+                <div class="index-table-label">@Resource.References</div>
+            </a>
+        </td>
+        <td class="index-table-cell">
+            <a href="@Url.Action("Index", "ReferenceType")">
+                <div class="index-table-image"><img src="@Url.Content("~/Images/Icons/ReferenceType.png")" alt="@Resource.ReferenceTypes" /></div>
+                <div class="index-table-label">@Resource.ReferenceTypes</div>
+            </a>
+        </td>
+        <td class="index-table-cell">
+            <a href="@Url.Action("Index", "ReferenceCategory")">
+                <div class="index-table-image"><img src="@Url.Content("~/Images/Icons/ReferenceCategory.png")" alt="@Resource.Categories" /></div>
+                <div class="index-table-label">@Resource.Categories</div>
+            </a>
+        </td>
+        <td class="index-table-cell">
+            <a href="@Url.Action("Icons", "Plant")">
+                <div class="index-table-image"><img src="@Url.Content("~/Images/Icons/PlantIcons.png")" alt="@Resource.PlantIcons" /></div>
+                <div class="index-table-label">@Resource.PlantIcons</div>
+            </a>
+        </td>
+        <td class="index-table-cell">
+            <a href="@Url.Action("HomeIcons", "Plant")">
+                <div class="index-table-image"><img src="@Url.Content("~/Images/Icons/HomeIcons.png")" alt="@Resource.HomeIcons" /></div>
+                <div class="index-table-label">@Resource.HomeIcons</div>
+            </a>
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,106 @@
+﻿@model IEnumerable<EBinder_Operator.Models.Reference>
+@using EBinder_Operator.Models;
+
+@{
+    
+    ReferenceType icon = ViewData["RefType"] as ReferenceType;
+    ViewBag.Title = icon.TypeName;
+    string iconSrc = "../../Images/Icons/" + Session["Language"] + "/" + icon.TypeName + ".png";
+}
+
+<script type="text/javascript">
+    var spinnerVisible = false;
+    function showProgress(refId) {
+        if (!spinnerVisible) {
+            $("div#spinner").fadeIn("fast");
+            spinnerVisible = true;
+        }
+
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("OpenReference")', // we are calling json method
+            dataType: 'json',
+            data: { refId: refId },
+            success: function () {
+                hideProgress();
+                
+            },
+            error: function (ex) {
+                alert('Failed to open reference' + ex);
+                hideProgress();
+            }
+
+        }); 
+        
+        return false;
+    };
+    function hideProgress() {
+        if (spinnerVisible) {
+            var spinner = $("div#spinner");
+            spinner.fadeOut("fast");
+            spinnerVisible = false;
+        }
+    };
+</script>
+
+<div id="spinner">
+        Loading...
+</div>
+<div class="listLayout">
+    <div class = "listIcon">
+        <div class = "iconContainer" style="margin: 0">
+            <img src="@iconSrc" alt="@icon.TypeName" height="200" />
+            <div class="iconShadow"><img src="../../Images/shadow.png" alt="Shadow"/></div>
+        </div>
+        <div class="iconContainer" style="height: 75px; padding-top: 35px; margin: 0">
+            <a href="@Url.Action("Index")">
+				<img src="../../Images/back.png" alt="Go Back" height="65px" />
+				<div class="iconShadow"><img src="../../Images/shadow.png" alt="Shadow"/></div>
+            </a>
+		</div>
+    </div>
+    <div class = "listContainer">
+        <div class = "listTitle">@icon.TypeName</div>
+        <div class = "list">
+            <div style="box-shadow: 0px 0px 10px;">
+            <table>
+            <tr>
+            <td>
+                <table class = "listTable">
+                    <tr>
+                        <th>Link</th>
+                        <th class="linkNumber"">@Html.DisplayNameFor(model => model.Number)</th>
+                        <th class="linkTitle">@Html.DisplayNameFor(model => model.Title)</th>
+                    </tr>
+                </table>
+            </td>
+            </tr>
+            <tr>
+            <td>
+                <div class ="scroll">
+                <table class = "listTable">
+                @{
+                    bool flag = true;
+                    string color = "WhiteSmoke";
+                    
+                    foreach (var item in Model)
+                    {
+				        <tr style="background-color: @color">
+					        <td style="width: 100px; padding-top: 5px"><a href="#" onclick="showProgress(@item.ReferenceID)"><img src="../../Images/open.png" alt="Open"/></a></td>
+					        <td class="linkNumber">@item.Number</td>
+                            <td class="linkTitle">@item.Title</td>
+				        </tr>
+                        if (flag) { color = "White"; } else { color = "WhiteSmoke"; } flag = !flag; 
+                    } 
+                }
+                </table>
+                </div>
+                </td>
+                </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+

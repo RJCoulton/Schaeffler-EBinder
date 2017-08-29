@@ -1,0 +1,429 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddIcon" xml:space="preserve">
+    <value>Agregar ícono</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>Todos</value>
+  </data>
+  <data name="ApplyFilter" xml:space="preserve">
+    <value>Aplicar filtro</value>
+  </data>
+  <data name="BackToCategories" xml:space="preserve">
+    <value>Regresar a categorías</value>
+  </data>
+  <data name="BackToCells" xml:space="preserve">
+    <value>Regresar a líneas</value>
+  </data>
+  <data name="BackToDepartments" xml:space="preserve">
+    <value>Regresar a departamentos</value>
+  </data>
+  <data name="BackToList" xml:space="preserve">
+    <value>Regresar a la lista</value>
+  </data>
+  <data name="BackToPlants" xml:space="preserve">
+    <value>Regresar a plantas</value>
+  </data>
+  <data name="BackToReferences" xml:space="preserve">
+    <value>Regresar a referencias</value>
+  </data>
+  <data name="BackToRegions" xml:space="preserve">
+    <value>Regresar a regiones</value>
+  </data>
+  <data name="BackToUsers" xml:space="preserve">
+    <value>Regresar a usuarios</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Categorías</value>
+  </data>
+  <data name="CategoryName" xml:space="preserve">
+    <value>Nombre de la categoría</value>
+  </data>
+  <data name="CategoryNameTooLong" xml:space="preserve">
+    <value>El nombre debe contener menos de 40 caracteres</value>
+  </data>
+  <data name="CategoryNameTooShort" xml:space="preserve">
+    <value>El nombre debe tener más de 5 caracteres</value>
+  </data>
+  <data name="Cell" xml:space="preserve">
+    <value>Línea</value>
+  </data>
+  <data name="CellRequired" xml:space="preserve">
+    <value>La línea es requerida</value>
+  </data>
+  <data name="Cells" xml:space="preserve">
+    <value>Líneas</value>
+  </data>
+  <data name="ChangeFilter" xml:space="preserve">
+    <value>Cambiar filtro</value>
+  </data>
+  <data name="ContactEmail" xml:space="preserve">
+    <value>Email de contacto</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Crear</value>
+  </data>
+  <data name="CreateLink" xml:space="preserve">
+    <value>Crear link</value>
+  </data>
+  <data name="CreateNew" xml:space="preserve">
+    <value>Crear nuevo</value>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="Default1" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Borrar</value>
+  </data>
+  <data name="DeleteConfirmation" xml:space="preserve">
+    <value>Estas seguro de querer borrar esto?</value>
+  </data>
+  <data name="DeleteRefError" xml:space="preserve">
+    <value>No se pudo borrar la referencia</value>
+  </data>
+  <data name="Department" xml:space="preserve">
+    <value>Departamento</value>
+  </data>
+  <data name="DepartmentRequired" xml:space="preserve">
+    <value>El departamento es requerido</value>
+  </data>
+  <data name="Departments" xml:space="preserve">
+    <value>Departamentos</value>
+  </data>
+  <data name="Dept" xml:space="preserve">
+    <value>Depto</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Detalles y vínculos</value>
+  </data>
+  <data name="EBinderTitle" xml:space="preserve">
+    <value>Administración de Ebinder+</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="EmailRequired" xml:space="preserve">
+    <value>Email es requerido</value>
+  </data>
+  <data name="FailedToUnlinkError" xml:space="preserve">
+    <value>Fallo al remover el vinculo</value>
+  </data>
+  <data name="FilterDescription" xml:space="preserve">
+    <value>Escoge una ubicación para filtrar los documentos para esa área</value>
+  </data>
+  <data name="FilterFlag" xml:space="preserve">
+    <value>Solo referencias Nuevas/Señaladas</value>
+  </data>
+  <data name="FilterGlobal" xml:space="preserve">
+    <value>Solo referencias de mi área</value>
+  </data>
+  <data name="FilterNoLink" xml:space="preserve">
+    <value>Solo referencias sin vínculos</value>
+  </data>
+  <data name="FilterOptions" xml:space="preserve">
+    <value>Opciones de filtrado</value>
+  </data>
+  <data name="Flag" xml:space="preserve">
+    <value>Señalar</value>
+  </data>
+  <data name="FlagConfirmation" xml:space="preserve">
+    <value>Estas seguro de querer señalar esta referencia?</value>
+  </data>
+  <data name="FlagDate" xml:space="preserve">
+    <value>Fecha de señalización</value>
+  </data>
+  <data name="HomeIcons" xml:space="preserve">
+    <value>Iconos de inicio</value>
+  </data>
+  <data name="HomePageMaxIconError" xml:space="preserve">
+    <value>Solamente pueden haber 8 iconos en la pagina de inicio. Considera borrar uno antes de agregar uno nuevo</value>
+  </data>
+  <data name="IconDeleteError" xml:space="preserve">
+    <value>No se puedo borrar el ícono</value>
+  </data>
+  <data name="LinkedTo" xml:space="preserve">
+    <value>Vinculado a</value>
+  </data>
+  <data name="LinkExistsError" xml:space="preserve">
+    <value>Esta referencia ya pertenece a esta área</value>
+  </data>
+  <data name="Links" xml:space="preserve">
+    <value>Vínculos</value>
+  </data>
+  <data name="NameRequired" xml:space="preserve">
+    <value>Nombre es requerido</value>
+  </data>
+  <data name="NameTooLong" xml:space="preserve">
+    <value>El nombre debe tener menos de 25 caracteres</value>
+  </data>
+  <data name="NameTooShort" xml:space="preserve">
+    <value>El nombre debe tener más de 3 caracteres</value>
+  </data>
+  <data name="Part" xml:space="preserve">
+    <value>Parte</value>
+  </data>
+  <data name="Plant" xml:space="preserve">
+    <value>Planta</value>
+  </data>
+  <data name="PlantIconError" xml:space="preserve">
+    <value>La planta ya usa ese ícono</value>
+  </data>
+  <data name="PlantIcons" xml:space="preserve">
+    <value>Iconos de la planta</value>
+  </data>
+  <data name="PlantRequired" xml:space="preserve">
+    <value>La planta es requerida</value>
+  </data>
+  <data name="Plants" xml:space="preserve">
+    <value>Plantas</value>
+  </data>
+  <data name="ReferenceCategories" xml:space="preserve">
+    <value>Categorías de referencia</value>
+  </data>
+  <data name="ReferenceCategory" xml:space="preserve">
+    <value>Categoría de referencia</value>
+  </data>
+  <data name="ReferenceNumber" xml:space="preserve">
+    <value>Número de referencia</value>
+  </data>
+  <data name="References" xml:space="preserve">
+    <value>Referencias</value>
+  </data>
+  <data name="ReferenceTitle" xml:space="preserve">
+    <value>Titulo de referencia</value>
+  </data>
+  <data name="ReferenceType" xml:space="preserve">
+    <value>Tipo de referencia</value>
+  </data>
+  <data name="ReferenceTypes" xml:space="preserve">
+    <value>Tipos de referencias</value>
+  </data>
+  <data name="RefNumberRequired" xml:space="preserve">
+    <value>El número de referencia es requerido</value>
+  </data>
+  <data name="RefNumberTooLong" xml:space="preserve">
+    <value>El número de referencia debe tener menos de 25 caracteres</value>
+  </data>
+  <data name="RefNumberTooShort" xml:space="preserve">
+    <value>El número de referencia  debe tener más de 3 caracteres</value>
+  </data>
+  <data name="RefTitleTooLong" xml:space="preserve">
+    <value>El titulo debe de tener menos de 150 caracteres</value>
+  </data>
+  <data name="RefTitleTooShort" xml:space="preserve">
+    <value>El titulo debe tener mas de 5 caracteres</value>
+  </data>
+  <data name="RefTypeRequired" xml:space="preserve">
+    <value>Tipo de referencia es requerido</value>
+  </data>
+  <data name="Region" xml:space="preserve">
+    <value>Región</value>
+  </data>
+  <data name="RegionRequired" xml:space="preserve">
+    <value>La región es requerida</value>
+  </data>
+  <data name="Regions" xml:space="preserve">
+    <value>Regiones</value>
+  </data>
+  <data name="RemoveLink" xml:space="preserve">
+    <value>Remover vinculo</value>
+  </data>
+  <data name="RemoveLinkConfirmation" xml:space="preserve">
+    <value>Estas seguro que quieres borrar este vinculo?</value>
+  </data>
+  <data name="ReturnToDashboard" xml:space="preserve">
+    <value>Regresar al Dashboard</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="SearchCriteria" xml:space="preserve">
+    <value>Criterio de búsqueda</value>
+  </data>
+  <data name="SelectAPlantError" xml:space="preserve">
+    <value>Por favor selecciona una planta del menú de filtros</value>
+  </data>
+  <data name="Test" xml:space="preserve">
+    <value>Prueba</value>
+  </data>
+  <data name="TitleRequired" xml:space="preserve">
+    <value>Titulo es requerido</value>
+  </data>
+  <data name="URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="URLRequired" xml:space="preserve">
+    <value>El URL es requerido</value>
+  </data>
+  <data name="URLTooLong" xml:space="preserve">
+    <value>El URL debe tener menos de 250 caracteres</value>
+  </data>
+  <data name="URLTooShort" xml:space="preserve">
+    <value>El URL debe tener más de 5 caracteres</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>Usuario</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Nombre de usuario</value>
+  </data>
+  <data name="UsernameNotRegistered" xml:space="preserve">
+    <value>Tu nombre de usuario aún no está registrado en Ebinder+. Por favor contacta a tu administrador de Ebinder+.</value>
+  </data>
+  <data name="UsernameRequired" xml:space="preserve">
+    <value>Nombre de usuario es requerido</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>Usuarios</value>
+  </data>
+  <data name="UserType" xml:space="preserve">
+    <value>Tipo de usuario</value>
+  </data>
+  <data name="UserTypeRequired" xml:space="preserve">
+    <value>Tipo de usuario es requerido</value>
+  </data>
+  <data name="Workcenter" xml:space="preserve">
+    <value>Número de centro de trabajo</value>
+  </data>
+  <data name="WorkcenterLength" xml:space="preserve">
+    <value>El número de centro de trabajo debe tener 9 caracteres</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="LanguageRequired" xml:space="preserve">
+    <value>LanguageRequired</value>
+  </data>
+  <data name="Reference" xml:space="preserve">
+    <value>Referencia</value>
+  </data>
+  <data name="TypeTooLong" xml:space="preserve">
+    <value>Tipo de referencia debe ser inferior a 25 caracteres</value>
+  </data>
+  <data name="TypeTooShort" xml:space="preserve">
+    <value>Tipo de referencia debe ser más de 3 caracteres</value>
+  </data>
+</root>

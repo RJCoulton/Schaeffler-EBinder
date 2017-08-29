@@ -1,0 +1,41 @@
+﻿@model IEnumerable<EBinder.Models.ReferenceType>
+@{
+    ViewBag.Title = "Home Page Icons";
+}
+
+<h2>@ViewBag.Title - @Session["Plant"]</h2>
+
+@using (Html.BeginForm("AddHomeIcon","Plant", null)) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+    <legend>Add Icon</legend>
+        <div class="editor-field">
+            @Html.DropDownList("iconId", ViewData["iconId"] as List<SelectListItem>)
+        </div>
+
+        <p>
+            <input type="submit" value="Add Icon" />
+        </p>
+    </fieldset>
+}
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TypeName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TypeName)
+        </td>
+        <td>
+            @Html.ActionLink("Delete", "DeleteHomeIcon", new { iconId = item.ReferenceTypeID })
+        </td>
+    </tr>
+}
+
+</table>

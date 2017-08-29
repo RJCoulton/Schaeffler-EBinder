@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ADInfo">
+          <Key>
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Department" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'Central_Data.dbo.SAP_Matnr_Extract' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="SAP_Matnr_Extract">
+          <Property Name="WERKS" Type="nvarchar" MaxLength="4" />
+          <Property Name="MATNR" Type="nvarchar" MaxLength="18" />
+          <Property Name="MAKTX" Type="nvarchar" MaxLength="40" />
+          <Property Name="MTART" Type="nvarchar" MaxLength="4" />
+          <Property Name="MSTAE" Type="nvarchar" MaxLength="2" />
+          <Property Name="SPRAS" Type="nvarchar" MaxLength="2" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Central_Data.dbo.SAPCostCenters' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SAPCostCenters">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Number" />
+            <PropertyRef Name="UpdatedOn" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Number" Type="varchar" MaxLength="16" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="64" />
+          <Property Name="Description" Type="varchar" MaxLength="128" />
+          <Property Name="Company" Type="varchar" MaxLength="8" />
+          <Property Name="Hierarchy" Type="varchar" MaxLength="16" />
+          <Property Name="Responsible" Type="varchar" MaxLength="16" />
+          <Property Name="ResponsibleAlt" Type="varchar" MaxLength="32" />
+          <Property Name="ValidOn" Type="varchar" MaxLength="16" />
+          <Property Name="ExpireOn" Type="datetime" />
+          <Property Name="CreatedOn" Type="varchar" MaxLength="16" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+          <Property Name="ExpireOnTest" Type="datetime" />
+          <Property Name="Erase" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Central_Data.dbo.SAPEmployees' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SAPEmployees">
+          <Key>
+            <PropertyRef Name="ClockNumber" />
+            <PropertyRef Name="IsActive" />
+            <PropertyRef Name="UpdateCheck" />
+            <PropertyRef Name="UpdatedOn" />
+          </Key>
+          <Property Name="ClockNumber" Type="varchar" MaxLength="16" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="16" />
+          <Property Name="LastName" Type="varchar" MaxLength="64" />
+          <Property Name="FirstName" Type="varchar" MaxLength="64" />
+          <Property Name="BirthDate" Type="varchar" MaxLength="16" />
+          <Property Name="CostCenter" Type="varchar" MaxLength="16" />
+          <Property Name="OrgUnitNumber" Type="varchar" MaxLength="16" />
+          <Property Name="Department" Type="varchar" MaxLength="50" />
+          <Property Name="Status" Type="int" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="UpdateCheck" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="varchar" MaxLength="16" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Central_Data.dbo.SAPParts' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SAPParts">
+          <Key>
+            <PropertyRef Name="SAPMaterialNum" />
+            <PropertyRef Name="CompanyNumber" />
+            <PropertyRef Name="PartDesc" />
+          </Key>
+          <Property Name="SAPMaterialNum" Type="nvarchar" MaxLength="18" Nullable="false" />
+          <Property Name="CompanyNumber" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="PartDesc" Type="nvarchar" MaxLength="120" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="CDModelStoreContainer">
+          <EntitySet Name="ADInfo" EntityType="Self.ADInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SAPCostCenters" EntityType="Self.SAPCostCenters" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SAPCostCenters].[ID] AS [ID], 
+    [SAPCostCenters].[Number] AS [Number], 
+    [SAPCostCenters].[Name] AS [Name], 
+    [SAPCostCenters].[Description] AS [Description], 
+    [SAPCostCenters].[Company] AS [Company], 
+    [SAPCostCenters].[Hierarchy] AS [Hierarchy], 
+    [SAPCostCenters].[Responsible] AS [Responsible], 
+    [SAPCostCenters].[ResponsibleAlt] AS [ResponsibleAlt], 
+    [SAPCostCenters].[ValidOn] AS [ValidOn], 
+    [SAPCostCenters].[ExpireOn] AS [ExpireOn], 
+    [SAPCostCenters].[CreatedOn] AS [CreatedOn], 
+    [SAPCostCenters].[UpdatedOn] AS [UpdatedOn], 
+    [SAPCostCenters].[ExpireOnTest] AS [ExpireOnTest], 
+    [SAPCostCenters].[Erase] AS [Erase]
+    FROM [dbo].[SAPCostCenters] AS [SAPCostCenters]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SAPEmployees" EntityType="Self.SAPEmployees" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SAPEmployees].[ClockNumber] AS [ClockNumber], 
+    [SAPEmployees].[UserName] AS [UserName], 
+    [SAPEmployees].[LastName] AS [LastName], 
+    [SAPEmployees].[FirstName] AS [FirstName], 
+    [SAPEmployees].[BirthDate] AS [BirthDate], 
+    [SAPEmployees].[CostCenter] AS [CostCenter], 
+    [SAPEmployees].[OrgUnitNumber] AS [OrgUnitNumber], 
+    [SAPEmployees].[Department] AS [Department], 
+    [SAPEmployees].[Status] AS [Status], 
+    [SAPEmployees].[IsActive] AS [IsActive], 
+    [SAPEmployees].[UpdateCheck] AS [UpdateCheck], 
+    [SAPEmployees].[UpdatedOn] AS [UpdatedOn], 
+    [SAPEmployees].[UpdatedBy] AS [UpdatedBy]
+    FROM [dbo].[SAPEmployees] AS [SAPEmployees]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SAPParts" EntityType="Self.SAPParts" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SAPParts].[SAPMaterialNum] AS [SAPMaterialNum], 
+    [SAPParts].[CompanyNumber] AS [CompanyNumber], 
+    [SAPParts].[PartDesc] AS [PartDesc]
+    FROM [dbo].[SAPParts] AS [SAPParts]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ADInfo">
+          <Key>
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Department" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SAPCostCenter">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Number" />
+            <PropertyRef Name="UpdatedOn" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Number" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="Company" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="Hierarchy" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="Responsible" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="ResponsibleAlt" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="ValidOn" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="ExpireOn" Type="DateTime" Precision="3" />
+          <Property Name="CreatedOn" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ExpireOnTest" Type="DateTime" Precision="3" />
+          <Property Name="Erase" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="SAPEmployee">
+          <Key>
+            <PropertyRef Name="ClockNumber" />
+            <PropertyRef Name="IsActive" />
+            <PropertyRef Name="UpdateCheck" />
+            <PropertyRef Name="UpdatedOn" />
+          </Key>
+          <Property Name="ClockNumber" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="FirstName" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="BirthDate" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="CostCenter" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="OrgUnitNumber" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="Department" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="UpdateCheck" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="SAPPart">
+          <Key>
+            <PropertyRef Name="SAPMaterialNum" />
+            <PropertyRef Name="CompanyNumber" />
+            <PropertyRef Name="PartDesc" />
+          </Key>
+          <Property Name="SAPMaterialNum" Type="String" MaxLength="18" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CompanyNumber" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PartDesc" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="CDContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ADInfoes" EntityType="Self.ADInfo" />
+          <EntitySet Name="SAPCostCenters" EntityType="Self.SAPCostCenter" />
+          <EntitySet Name="SAPEmployees" EntityType="Self.SAPEmployee" />
+          <EntitySet Name="SAPParts" EntityType="Self.SAPPart" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CDModelStoreContainer" CdmEntityContainer="CDContext">
+          <EntitySetMapping Name="ADInfoes">
+            <EntityTypeMapping TypeName="CDModel.ADInfo">
+              <MappingFragment StoreEntitySet="ADInfo">
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SAPCostCenters">
+            <EntityTypeMapping TypeName="CDModel.SAPCostCenter">
+              <MappingFragment StoreEntitySet="SAPCostCenters">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="Hierarchy" ColumnName="Hierarchy" />
+                <ScalarProperty Name="Responsible" ColumnName="Responsible" />
+                <ScalarProperty Name="ResponsibleAlt" ColumnName="ResponsibleAlt" />
+                <ScalarProperty Name="ValidOn" ColumnName="ValidOn" />
+                <ScalarProperty Name="ExpireOn" ColumnName="ExpireOn" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="ExpireOnTest" ColumnName="ExpireOnTest" />
+                <ScalarProperty Name="Erase" ColumnName="Erase" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SAPEmployees">
+            <EntityTypeMapping TypeName="CDModel.SAPEmployee">
+              <MappingFragment StoreEntitySet="SAPEmployees">
+                <ScalarProperty Name="ClockNumber" ColumnName="ClockNumber" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="CostCenter" ColumnName="CostCenter" />
+                <ScalarProperty Name="OrgUnitNumber" ColumnName="OrgUnitNumber" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="UpdateCheck" ColumnName="UpdateCheck" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SAPParts">
+            <EntityTypeMapping TypeName="CDModel.SAPPart">
+              <MappingFragment StoreEntitySet="SAPParts">
+                <ScalarProperty Name="SAPMaterialNum" ColumnName="SAPMaterialNum" />
+                <ScalarProperty Name="CompanyNumber" ColumnName="CompanyNumber" />
+                <ScalarProperty Name="PartDesc" ColumnName="PartDesc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

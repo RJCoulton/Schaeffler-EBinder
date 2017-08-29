@@ -1,0 +1,142 @@
+﻿@using EBinder.Models;
+@using EBinder.App_GlobalResources
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>EBinder+</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <header>
+        <div class="content-wrapper">
+            <a href="@Url.Action("Index", "Home")">
+                <img alt="Schaeffler" src="~/Images/schaeffler.png" style="float: left; margin-top:5px;" />
+            </a>
+            <div class="filterInfo">
+                @{
+                    //Grab object from session
+                    var region = Session["Region"] as Region;
+                    //If object is null set a name for display purposes
+                    if (region == null)
+                    {
+                        region = new Region();
+                        region.Name = Resource.All;
+                    }
+                    var plant = Session["Plant"] as Plant;
+                    if (plant == null)
+                    {
+                        plant = new Plant();
+                        plant.Name = Resource.All;
+                    }
+                    var dept = Session["Department"] as Department;
+                    if (dept == null)
+                    {
+                        dept = new Department();
+                        dept.Name = Resource.All;
+                    }
+                    var cell = Session["Cell"] as Cell;
+                    if (cell == null)
+                    {
+                        cell = new Cell();
+                        cell.Name = Resource.All;
+                    }
+                    var part = Session["Part"] as Part;
+                    if (part == null)
+                    {
+                        part = new Part();
+                        part.PartDesc = Resource.All;
+                    }
+                }
+                <table>
+                    <tr>
+                        <td style="font-weight: normal">@Resource.Region:</td>
+                        <td>@region.Name</td>
+
+                        <td style="font-weight: normal">@Resource.Dept:</td>
+                        <td>@dept.Name</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: normal">@Resource.Plant:</td>
+                        <td>@plant.Name</td>
+                        <td style="font-weight: normal">@Resource.Cell:</td>
+                        <td>@cell.Name</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: normal">@Resource.Part:</td>
+                        <td>@part.PartDesc</td>
+                        <td colspan="2">
+                            @using (Html.BeginForm("Filter", "Filter", FormMethod.Get))
+                            {
+                                <input type="submit" value="@Resource.ChangeFilter" />
+                            }
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div style="float:right">
+                <div class="HelpButton">
+                    <a href="@Url.Action("Help", "Home")">
+                        <img alt="Help" src="~/Images/help button.png"/>
+                    </a>
+                </div>
+                <div class="LangSelector">
+                    <select name="lang" id="lang">
+                        @foreach (var i in EBinder.SiteLanguages.AvailableLanguages)
+                        {
+                            var curLang = Session["Language"];
+                            if (curLang != null && curLang.ToString() == i.LangCultureName)
+                            {
+                                <option value="@i.LangCultureName" selected="selected">@i.LangFullName</option>
+                            }
+                            else
+                            {
+                                <option value="@i.LangCultureName">@i.LangFullName</option>
+                            }
+
+                        }
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="body">
+        <section class="body">
+            <div class="text-danger">@TempData["message"]</div>
+            @RenderBody()
+        </section>
+    </div>
+    <footer>
+    </footer>
+
+    
+    <script src="../../Scripts/jquery-1.7.1.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery-1.7.1.min.js" type="text/javascript"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#lang").change(function () {
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("ChangeLang", "Home")', // we are calling json method
+                    dataType: 'json',
+                    data: { lang: $("#lang").val() },
+                    success: function (val) {
+                        location.reload(true);
+                    },
+                    error: function (ex) {
+                        alert('Failed to change language.' + ex);
+                    }
+                });
+                return false;
+            })
+        });
+    </script>    
+</body>
+</html>

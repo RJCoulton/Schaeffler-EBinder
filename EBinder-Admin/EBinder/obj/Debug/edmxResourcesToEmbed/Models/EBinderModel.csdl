@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EbinderModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Cell">
+    <Key>
+      <PropertyRef Name="CellID" />
+    </Key>
+    <Property Name="CellID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Workcenter" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="DepartmentID" Type="Int32" Nullable="false" />
+    <Property Name="Part_PartID" Type="Int32" />
+    <NavigationProperty Name="Department" Relationship="Self.FK_dbo_Cell_dbo_Department_DepartmentID" FromRole="Cell" ToRole="Department" />
+    <NavigationProperty Name="Part" Relationship="Self.FK_dbo_Cell_dbo_Part_Part_PartID" FromRole="Cell" ToRole="Part" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_dbo_User_dbo_Cell_CellID" FromRole="Cell" ToRole="User" />
+    <NavigationProperty Name="References" Relationship="Self.CellReferences" FromRole="Cell" ToRole="Reference" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="DepartmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PlantID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Cells" Relationship="Self.FK_dbo_Cell_dbo_Department_DepartmentID" FromRole="Department" ToRole="Cell" />
+    <NavigationProperty Name="Plant" Relationship="Self.FK_dbo_Department_dbo_Plant_PlantID" FromRole="Department" ToRole="Plant" />
+    <NavigationProperty Name="References" Relationship="Self.DepartmentReferences" FromRole="Department" ToRole="Reference" />
+  </EntityType>
+  <EntityType Name="Part">
+    <Key>
+      <PropertyRef Name="PartID" />
+    </Key>
+    <Property Name="PartID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PartDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Cells" Relationship="Self.FK_dbo_Cell_dbo_Part_Part_PartID" FromRole="Part" ToRole="Cell" />
+    <NavigationProperty Name="References" Relationship="Self.PartReferences" FromRole="Part" ToRole="Reference" />
+  </EntityType>
+  <EntityType Name="Plant">
+    <Key>
+      <PropertyRef Name="PlantID" />
+    </Key>
+    <Property Name="PlantID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RegionID" Type="Int32" Nullable="false" />
+    <Property Name="ContactEmail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Language" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyNumbers" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Departments" Relationship="Self.FK_dbo_Department_dbo_Plant_PlantID" FromRole="Plant" ToRole="Department" />
+    <NavigationProperty Name="Region" Relationship="Self.FK_dbo_Plant_dbo_Region_RegionID" FromRole="Plant" ToRole="Region" />
+    <NavigationProperty Name="ReferenceTypes" Relationship="Self.HomePageReferences" FromRole="Plant" ToRole="ReferenceType" />
+    <NavigationProperty Name="References" Relationship="Self.PlantReferences" FromRole="Plant" ToRole="Reference" />
+    <NavigationProperty Name="HomePageReferences" Relationship="Self.ReferenceTypePlant" FromRole="Plant" ToRole="ReferenceType" />
+  </EntityType>
+  <EntityType Name="Reference">
+    <Key>
+      <PropertyRef Name="ReferenceID" />
+    </Key>
+    <Property Name="ReferenceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="URL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FlagDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ReferenceTypeID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ReferenceType" Relationship="Self.FK_dbo_Reference_dbo_ReferenceType_ReferenceTypeID" FromRole="Reference" ToRole="ReferenceType" />
+    <NavigationProperty Name="Cells" Relationship="Self.CellReferences" FromRole="Reference" ToRole="Cell" />
+    <NavigationProperty Name="Departments" Relationship="Self.DepartmentReferences" FromRole="Reference" ToRole="Department" />
+    <NavigationProperty Name="Parts" Relationship="Self.PartReferences" FromRole="Reference" ToRole="Part" />
+    <NavigationProperty Name="Plants" Relationship="Self.PlantReferences" FromRole="Reference" ToRole="Plant" />
+    <NavigationProperty Name="Regions" Relationship="Self.RegionReferences" FromRole="Reference" ToRole="Region" />
+    <Property Name="DefaultPlantID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ReferenceCategory">
+    <Key>
+      <PropertyRef Name="ReferenceCategoryID" />
+    </Key>
+    <Property Name="ReferenceCategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName_en" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CategoryName_es" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ReferenceTypes" Relationship="Self.FK_dbo_ReferenceType_dbo_ReferenceCategory_ReferenceCategoryID" FromRole="ReferenceCategory" ToRole="ReferenceType" />
+  </EntityType>
+  <EntityType Name="ReferenceType">
+    <Key>
+      <PropertyRef Name="ReferenceTypeID" />
+    </Key>
+    <Property Name="ReferenceTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeName_en" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TypeName_es" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="ReferenceCategoryID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="References" Relationship="Self.FK_dbo_Reference_dbo_ReferenceType_ReferenceTypeID" FromRole="ReferenceType" ToRole="Reference" />
+    <NavigationProperty Name="ReferenceCategory" Relationship="Self.FK_dbo_ReferenceType_dbo_ReferenceCategory_ReferenceCategoryID" FromRole="ReferenceType" ToRole="ReferenceCategory" />
+    <NavigationProperty Name="Plants" Relationship="Self.HomePageReferences" FromRole="ReferenceType" ToRole="Plant" />
+    <NavigationProperty Name="HomePagePlants" Relationship="Self.ReferenceTypePlant" FromRole="ReferenceType" ToRole="Plant" />
+  </EntityType>
+  <EntityType Name="Region">
+    <Key>
+      <PropertyRef Name="RegionID" />
+    </Key>
+    <Property Name="RegionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Plants" Relationship="Self.FK_dbo_Plant_dbo_Region_RegionID" FromRole="Region" ToRole="Plant" />
+    <NavigationProperty Name="References" Relationship="Self.RegionReferences" FromRole="Region" ToRole="Reference" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="Username" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CellID" Type="Int32" Nullable="false" />
+    <Property Name="UserTypeID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Cell" Relationship="Self.FK_dbo_User_dbo_Cell_CellID" FromRole="User" ToRole="Cell" />
+    <NavigationProperty Name="UserType" Relationship="Self.FK_dbo_User_dbo_UserType_UserTypeID" FromRole="User" ToRole="UserType" />
+  </EntityType>
+  <EntityType Name="UserType">
+    <Key>
+      <PropertyRef Name="UserTypeID" />
+    </Key>
+    <Property Name="UserTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_dbo_User_dbo_UserType_UserTypeID" FromRole="UserType" ToRole="User" />
+  </EntityType>
+  <Association Name="FK_dbo_Cell_dbo_Department_DepartmentID">
+    <End Role="Department" Type="Self.Department" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Cell" Type="Self.Cell" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="DepartmentID" />
+      </Principal>
+      <Dependent Role="Cell">
+        <PropertyRef Name="DepartmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Cell_dbo_Part_Part_PartID">
+    <End Role="Part" Type="Self.Part" Multiplicity="0..1" />
+    <End Role="Cell" Type="Self.Cell" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Part">
+        <PropertyRef Name="PartID" />
+      </Principal>
+      <Dependent Role="Cell">
+        <PropertyRef Name="Part_PartID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_User_dbo_Cell_CellID">
+    <End Role="Cell" Type="Self.Cell" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cell">
+        <PropertyRef Name="CellID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="CellID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Department_dbo_Plant_PlantID">
+    <End Role="Plant" Type="Self.Plant" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Department" Type="Self.Department" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Plant">
+        <PropertyRef Name="PlantID" />
+      </Principal>
+      <Dependent Role="Department">
+        <PropertyRef Name="PlantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Plant_dbo_Region_RegionID">
+    <End Role="Region" Type="Self.Region" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Plant" Type="Self.Plant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Region">
+        <PropertyRef Name="RegionID" />
+      </Principal>
+      <Dependent Role="Plant">
+        <PropertyRef Name="RegionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Reference_dbo_ReferenceType_ReferenceTypeID">
+    <End Role="ReferenceType" Type="Self.ReferenceType" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Reference" Type="Self.Reference" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReferenceType">
+        <PropertyRef Name="ReferenceTypeID" />
+      </Principal>
+      <Dependent Role="Reference">
+        <PropertyRef Name="ReferenceTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ReferenceType_dbo_ReferenceCategory_ReferenceCategoryID">
+    <End Role="ReferenceCategory" Type="Self.ReferenceCategory" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ReferenceType" Type="Self.ReferenceType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReferenceCategory">
+        <PropertyRef Name="ReferenceCategoryID" />
+      </Principal>
+      <Dependent Role="ReferenceType">
+        <PropertyRef Name="ReferenceCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_User_dbo_UserType_UserTypeID">
+    <End Role="UserType" Type="Self.UserType" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserType">
+        <PropertyRef Name="UserTypeID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="UserTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CellReferences">
+    <End Role="Cell" Type="Self.Cell" Multiplicity="*" />
+    <End Role="Reference" Type="Self.Reference" Multiplicity="*" />
+  </Association>
+  <Association Name="DepartmentReferences">
+    <End Role="Department" Type="Self.Department" Multiplicity="*" />
+    <End Role="Reference" Type="Self.Reference" Multiplicity="*" />
+  </Association>
+  <Association Name="HomePageReferences">
+    <End Role="Plant" Type="Self.Plant" Multiplicity="*" />
+    <End Role="ReferenceType" Type="Self.ReferenceType" Multiplicity="*" />
+  </Association>
+  <Association Name="PartReferences">
+    <End Role="Part" Type="Self.Part" Multiplicity="*" />
+    <End Role="Reference" Type="Self.Reference" Multiplicity="*" />
+  </Association>
+  <Association Name="PlantReferences">
+    <End Role="Plant" Type="Self.Plant" Multiplicity="*" />
+    <End Role="Reference" Type="Self.Reference" Multiplicity="*" />
+  </Association>
+  <Association Name="ReferenceTypePlant">
+    <End Role="Plant" Type="Self.Plant" Multiplicity="*" />
+    <End Role="ReferenceType" Type="Self.ReferenceType" Multiplicity="*" />
+  </Association>
+  <Association Name="RegionReferences">
+    <End Role="Reference" Type="Self.Reference" Multiplicity="*" />
+    <End Role="Region" Type="Self.Region" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="EbinderContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cells" EntityType="Self.Cell" />
+    <EntitySet Name="Departments" EntityType="Self.Department" />
+    <EntitySet Name="Parts" EntityType="Self.Part" />
+    <EntitySet Name="Plants" EntityType="Self.Plant" />
+    <EntitySet Name="References" EntityType="Self.Reference" />
+    <EntitySet Name="ReferenceCategories" EntityType="Self.ReferenceCategory" />
+    <EntitySet Name="ReferenceTypes" EntityType="Self.ReferenceType" />
+    <EntitySet Name="Regions" EntityType="Self.Region" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="UserTypes" EntityType="Self.UserType" />
+    <AssociationSet Name="FK_dbo_Cell_dbo_Department_DepartmentID" Association="Self.FK_dbo_Cell_dbo_Department_DepartmentID">
+      <End Role="Department" EntitySet="Departments" />
+      <End Role="Cell" EntitySet="Cells" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Cell_dbo_Part_Part_PartID" Association="Self.FK_dbo_Cell_dbo_Part_Part_PartID">
+      <End Role="Part" EntitySet="Parts" />
+      <End Role="Cell" EntitySet="Cells" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_User_dbo_Cell_CellID" Association="Self.FK_dbo_User_dbo_Cell_CellID">
+      <End Role="Cell" EntitySet="Cells" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Department_dbo_Plant_PlantID" Association="Self.FK_dbo_Department_dbo_Plant_PlantID">
+      <End Role="Plant" EntitySet="Plants" />
+      <End Role="Department" EntitySet="Departments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Plant_dbo_Region_RegionID" Association="Self.FK_dbo_Plant_dbo_Region_RegionID">
+      <End Role="Region" EntitySet="Regions" />
+      <End Role="Plant" EntitySet="Plants" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Reference_dbo_ReferenceType_ReferenceTypeID" Association="Self.FK_dbo_Reference_dbo_ReferenceType_ReferenceTypeID">
+      <End Role="ReferenceType" EntitySet="ReferenceTypes" />
+      <End Role="Reference" EntitySet="References" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ReferenceType_dbo_ReferenceCategory_ReferenceCategoryID" Association="Self.FK_dbo_ReferenceType_dbo_ReferenceCategory_ReferenceCategoryID">
+      <End Role="ReferenceCategory" EntitySet="ReferenceCategories" />
+      <End Role="ReferenceType" EntitySet="ReferenceTypes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_User_dbo_UserType_UserTypeID" Association="Self.FK_dbo_User_dbo_UserType_UserTypeID">
+      <End Role="UserType" EntitySet="UserTypes" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="CellReferences" Association="Self.CellReferences">
+      <End Role="Cell" EntitySet="Cells" />
+      <End Role="Reference" EntitySet="References" />
+    </AssociationSet>
+    <AssociationSet Name="DepartmentReferences" Association="Self.DepartmentReferences">
+      <End Role="Department" EntitySet="Departments" />
+      <End Role="Reference" EntitySet="References" />
+    </AssociationSet>
+    <AssociationSet Name="HomePageReferences" Association="Self.HomePageReferences">
+      <End Role="Plant" EntitySet="Plants" />
+      <End Role="ReferenceType" EntitySet="ReferenceTypes" />
+    </AssociationSet>
+    <AssociationSet Name="PartReferences" Association="Self.PartReferences">
+      <End Role="Part" EntitySet="Parts" />
+      <End Role="Reference" EntitySet="References" />
+    </AssociationSet>
+    <AssociationSet Name="PlantReferences" Association="Self.PlantReferences">
+      <End Role="Plant" EntitySet="Plants" />
+      <End Role="Reference" EntitySet="References" />
+    </AssociationSet>
+    <AssociationSet Name="ReferenceTypePlant" Association="Self.ReferenceTypePlant">
+      <End Role="Plant" EntitySet="Plants" />
+      <End Role="ReferenceType" EntitySet="ReferenceTypes" />
+    </AssociationSet>
+    <AssociationSet Name="RegionReferences" Association="Self.RegionReferences">
+      <End Role="Reference" EntitySet="References" />
+      <End Role="Region" EntitySet="Regions" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

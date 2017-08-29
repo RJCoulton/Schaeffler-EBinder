@@ -1,0 +1,33 @@
+﻿@model EBinder.Models.Cell
+
+@{
+    ViewBag.Title = Model.Department.Name + " // " + Model.Name;
+}
+
+<h2>@ViewBag.Title</h2>
+
+<fieldset>
+<legend>Links</legend>
+    <table>
+     @foreach (var item in ViewData["Links"] as List<EBinder.Models.Reference>) {
+          
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.referenceType.TypeName) - 
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Number) -
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title) - 
+            </td>
+            <td>
+                @Html.ActionLink("Remove link", "RemoveLink", new { RefId=item.ReferenceID, CellId = Model.Department.DepartmentID })
+            </td>
+        </tr>
+    }
+    </table>
+</fieldset>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

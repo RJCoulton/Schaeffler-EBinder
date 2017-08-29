@@ -1,0 +1,56 @@
+﻿@model EBinder.Models.Department
+@using EBinder.App_GlobalResources
+
+@{
+    ViewBag.Title = Model.Plant.Name + " - " + Model.Name;
+}
+
+<h2>@ViewBag.Title</h2>
+<p>
+    @Html.ActionLink(Resource.BackToDepartments, "Index")
+</p>
+<fieldset>
+    <legend>@Resource.Links</legend>
+    <table>
+        <tr>
+            <th class="table-header">
+                @Resource.ReferenceType 
+            </th>
+            <th class="table-header">
+                @Resource.ReferenceNumber
+            </th>
+            <th class="table-header">
+                @Resource.ReferenceTitle
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in ViewData["Links"] as List<EBinder.Models.Reference>)
+        {
+
+            <tr>
+                <td class="table-cell">
+                    @if (Session["Language"].ToString() == "es")
+                {
+                        @Html.DisplayFor(modelItem => item.ReferenceType.TypeName_es)
+                }
+                else
+                {
+                        @Html.DisplayFor(modelItem => item.ReferenceType.TypeName_en)
+                    }
+                </td>
+                <td class="table-cell">
+                    @Html.DisplayFor(modelItem => item.Number)
+                </td>
+                <td class="table-cell">
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td class="table-cell">
+                    @Html.ActionLink(Resource.RemoveLink, "RemoveLink", new { RefId = item.ReferenceID, DeptId = Model.DepartmentID }, new { onclick = "return confirm('"+ Resource.RemoveLinkConfirmation+"');" })
+                </td>
+            </tr>
+        }
+    </table>
+</fieldset>
+
+

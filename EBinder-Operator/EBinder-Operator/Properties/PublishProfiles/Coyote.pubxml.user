@@ -1,0 +1,610 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\Deployed\Operator\</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>07/27/2015 11:39:24</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.AspNet.dll">
+      <publishTime>07/27/2015 11:39:22</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.Core.dll">
+      <publishTime>07/27/2015 11:39:22</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OAuth.Consumer.dll">
+      <publishTime>07/27/2015 11:39:22</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OAuth.dll">
+      <publishTime>07/27/2015 11:39:24</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OpenId.dll">
+      <publishTime>07/27/2015 11:39:24</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OpenId.RelyingParty.dll">
+      <publishTime>07/27/2015 11:39:24</publishTime>
+    </File>
+    <File Include="bin/EBinder-Operator.dll">
+      <publishTime>08/12/2016 10:40:49</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>07/27/2015 11:39:02</publishTime>
+    </File>
+    <File Include="bin/es/EBinder-Operator.resources.dll">
+      <publishTime>08/12/2016 10:40:50</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>07/27/2015 11:39:14</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.WebPages.OAuth.dll">
+      <publishTime>07/27/2015 11:39:20</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>07/27/2015 11:39:14</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.dll">
+      <publishTime>07/27/2015 11:39:16</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>07/27/2015 11:39:16</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.WebRequest.dll">
+      <publishTime>07/27/2015 11:39:18</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>07/27/2015 11:39:14</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>07/27/2015 11:39:18</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>07/27/2015 11:39:18</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>07/27/2015 11:39:16</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>07/27/2015 11:39:20</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>07/27/2015 11:39:14</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>07/27/2015 11:39:16</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>07/27/2015 11:39:16</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>07/27/2015 11:39:16</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>07/27/2015 11:39:24</publishTime>
+    </File>
+    <File Include="bin/WebMatrix.Data.dll">
+      <publishTime>07/27/2015 11:39:20</publishTime>
+    </File>
+    <File Include="bin/WebMatrix.WebData.dll">
+      <publishTime>07/27/2015 11:39:20</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>08/11/2016 18:01:52</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_flat_0_aaaaaa_40x100.png">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_flat_75_ffffff_40x100.png">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_55_fbf9ee_1x400.png">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_65_ffffff_1x400.png">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_75_dadada_1x400.png">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_75_e6e6e6_1x400.png">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_95_fef1ec_1x400.png">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_highlight-soft_75_cccccc_1x100.png">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_222222_256x240.png">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_2e83ff_256x240.png">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_454545_256x240.png">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_888888_256x240.png">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_cd0a0a_256x240.png">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery-ui.css">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.accordion.css">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.all.css">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.autocomplete.css">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.base.css">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.button.css">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.core.css">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.datepicker.css">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.dialog.css">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.progressbar.css">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.resizable.css">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.selectable.css">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.slider.css">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.tabs.css">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.theme.css">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_flat_0_aaaaaa_40x100.png">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_flat_75_ffffff_40x100.png">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_glass_55_fbf9ee_1x400.png">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_glass_65_ffffff_1x400.png">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_glass_75_dadada_1x400.png">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_glass_75_e6e6e6_1x400.png">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_glass_95_fef1ec_1x400.png">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_highlight-soft_75_cccccc_1x100.png">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-icons_222222_256x240.png">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-icons_2e83ff_256x240.png">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-icons_454545_256x240.png">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-icons_888888_256x240.png">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-icons_cd0a0a_256x240.png">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery-ui.min.css">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.accordion.min.css">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.autocomplete.min.css">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.button.min.css">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.core.min.css">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.datepicker.min.css">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.dialog.min.css">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.progressbar.min.css">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.resizable.min.css">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.selectable.min.css">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.slider.min.css">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.tabs.min.css">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.theme.min.css">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>07/27/2015 11:39:00</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>07/27/2015 11:39:00</publishTime>
+    </File>
+    <File Include="Images/back.png">
+      <publishTime>07/31/2015 10:25:18</publishTime>
+    </File>
+    <File Include="Images/flagIcon.png">
+      <publishTime>11/12/2015 00:39:04</publishTime>
+    </File>
+    <File Include="Images/help button.png">
+      <publishTime>07/28/2015 14:05:18</publishTime>
+    </File>
+    <File Include="Images/hex-loader.gif">
+      <publishTime>08/05/2015 10:19:54</publishTime>
+    </File>
+    <File Include="Images/Icons/en/Bill of Materials.png">
+      <publishTime>11/04/2015 23:49:24</publishTime>
+    </File>
+    <File Include="Images/Icons/en/Check Sheets.png">
+      <publishTime>11/04/2015 23:49:08</publishTime>
+    </File>
+    <File Include="Images/Icons/en/Control Plan.png">
+      <publishTime>11/05/2015 00:00:34</publishTime>
+    </File>
+    <File Include="Images/Icons/en/Deviations.png">
+      <publishTime>11/04/2015 23:49:24</publishTime>
+    </File>
+    <File Include="Images/Icons/en/EHS Policy.png">
+      <publishTime>11/04/2015 23:49:52</publishTime>
+    </File>
+    <File Include="Images/Icons/en/Employee Handbook.png">
+      <publishTime>11/04/2015 23:49:52</publishTime>
+    </File>
+    <File Include="Images/Icons/en/General Plant Procedures.png">
+      <publishTime>11/04/2015 23:49:52</publishTime>
+    </File>
+    <File Include="Images/Icons/en/Inspection Plan.png">
+      <publishTime>11/04/2015 23:49:24</publishTime>
+    </File>
+    <File Include="Images/Icons/en/Machine Instructions.png">
+      <publishTime>11/04/2015 23:49:08</publishTime>
+    </File>
+    <File Include="Images/Icons/en/MH Procedures.png">
+      <publishTime>11/05/2015 00:02:00</publishTime>
+    </File>
+    <File Include="Images/Icons/en/Move Standards.png">
+      <publishTime>11/04/2015 23:49:08</publishTime>
+    </File>
+    <File Include="Images/Icons/en/One Point Lessons.png">
+      <publishTime>11/04/2015 23:49:08</publishTime>
+    </File>
+    <File Include="Images/Icons/en/Procedures.png">
+      <publishTime>11/04/2015 23:49:24</publishTime>
+    </File>
+    <File Include="Images/Icons/en/Production Drawing.png">
+      <publishTime>11/04/2015 23:49:24</publishTime>
+    </File>
+    <File Include="Images/Icons/en/Qs-Stat.png">
+      <publishTime>11/05/2015 00:01:12</publishTime>
+    </File>
+    <File Include="Images/Icons/en/Quality Alerts.png">
+      <publishTime>11/04/2015 23:49:08</publishTime>
+    </File>
+    <File Include="Images/Icons/en/Quality Policy.png">
+      <publishTime>11/04/2015 23:49:52</publishTime>
+    </File>
+    <File Include="Images/Icons/en/Red Tag.png">
+      <publishTime>11/05/2015 00:01:12</publishTime>
+    </File>
+    <File Include="Images/Icons/en/Saftey Data Sheets.png">
+      <publishTime>11/05/2015 00:02:16</publishTime>
+    </File>
+    <File Include="Images/Icons/en/Serialization Logs.png">
+      <publishTime>11/04/2015 23:49:24</publishTime>
+    </File>
+    <File Include="Images/Icons/en/Setup Sheets.png">
+      <publishTime>11/04/2015 23:49:24</publishTime>
+    </File>
+    <File Include="Images/Icons/en/Shop Order.png">
+      <publishTime>11/04/2015 23:49:24</publishTime>
+    </File>
+    <File Include="Images/Icons/en/TPM.png">
+      <publishTime>11/05/2015 00:01:12</publishTime>
+    </File>
+    <File Include="Images/Icons/en/Visual Aids.png">
+      <publishTime>11/04/2015 23:49:08</publishTime>
+    </File>
+    <File Include="Images/Icons/en/Work Instructions.png">
+      <publishTime>11/04/2015 23:49:24</publishTime>
+    </File>
+    <File Include="Images/Icons/es/Bill of Materials.png">
+      <publishTime>01/26/2016 17:26:10</publishTime>
+    </File>
+    <File Include="Images/Icons/es/Check Sheets.png">
+      <publishTime>01/26/2016 17:26:20</publishTime>
+    </File>
+    <File Include="Images/Icons/es/Control Plan.png">
+      <publishTime>01/26/2016 17:26:10</publishTime>
+    </File>
+    <File Include="Images/Icons/es/Deviations.png">
+      <publishTime>01/26/2016 17:26:10</publishTime>
+    </File>
+    <File Include="Images/Icons/es/EHS Policy.png">
+      <publishTime>01/26/2016 17:25:58</publishTime>
+    </File>
+    <File Include="Images/Icons/es/Employee Handbook.png">
+      <publishTime>01/26/2016 17:25:58</publishTime>
+    </File>
+    <File Include="Images/Icons/es/General Plant Procedures.png">
+      <publishTime>01/26/2016 17:25:58</publishTime>
+    </File>
+    <File Include="Images/Icons/es/Inspection Plan.png">
+      <publishTime>01/26/2016 17:26:10</publishTime>
+    </File>
+    <File Include="Images/Icons/es/Machine Instructions.png">
+      <publishTime>01/26/2016 17:26:20</publishTime>
+    </File>
+    <File Include="Images/Icons/es/MH Procedures.png">
+      <publishTime>01/26/2016 17:25:58</publishTime>
+    </File>
+    <File Include="Images/Icons/es/Move Standards.png">
+      <publishTime>01/26/2016 17:26:20</publishTime>
+    </File>
+    <File Include="Images/Icons/es/One Point Lessons.png">
+      <publishTime>01/26/2016 17:26:20</publishTime>
+    </File>
+    <File Include="Images/Icons/es/Procedures.png">
+      <publishTime>01/26/2016 17:26:10</publishTime>
+    </File>
+    <File Include="Images/Icons/es/Production Drawing.png">
+      <publishTime>01/26/2016 17:26:10</publishTime>
+    </File>
+    <File Include="Images/Icons/es/Quality Alerts.png">
+      <publishTime>01/26/2016 17:26:20</publishTime>
+    </File>
+    <File Include="Images/Icons/es/Quality Policy.png">
+      <publishTime>01/26/2016 17:25:58</publishTime>
+    </File>
+    <File Include="Images/Icons/es/Saftey Data Sheets.png">
+      <publishTime>01/26/2016 17:25:58</publishTime>
+    </File>
+    <File Include="Images/Icons/es/Serialization Logs.png">
+      <publishTime>01/26/2016 17:26:10</publishTime>
+    </File>
+    <File Include="Images/Icons/es/Setup Sheets.png">
+      <publishTime>01/26/2016 17:26:10</publishTime>
+    </File>
+    <File Include="Images/Icons/es/Shop Order.png">
+      <publishTime>01/26/2016 17:26:10</publishTime>
+    </File>
+    <File Include="Images/Icons/es/Visual Aids.png">
+      <publishTime>01/26/2016 17:26:20</publishTime>
+    </File>
+    <File Include="Images/Icons/es/Work Instructions.png">
+      <publishTime>01/26/2016 17:26:10</publishTime>
+    </File>
+    <File Include="Images/open.png">
+      <publishTime>08/04/2015 12:59:12</publishTime>
+    </File>
+    <File Include="Images/schaeffler.png">
+      <publishTime>07/28/2015 14:11:30</publishTime>
+    </File>
+    <File Include="Images/shadow.png">
+      <publishTime>07/28/2015 10:39:56</publishTime>
+    </File>
+    <File Include="Images/Tooltips/en/Bill of Materials.png">
+      <publishTime>01/15/2016 11:44:56</publishTime>
+    </File>
+    <File Include="Images/Tooltips/en/Check Sheets.png">
+      <publishTime>01/15/2016 11:46:48</publishTime>
+    </File>
+    <File Include="Images/Tooltips/en/Control Plan.png">
+      <publishTime>01/15/2016 11:46:52</publishTime>
+    </File>
+    <File Include="Images/Tooltips/en/Deviations.png">
+      <publishTime>01/15/2016 11:46:46</publishTime>
+    </File>
+    <File Include="Images/Tooltips/en/EHS Policy.png">
+      <publishTime>01/15/2016 11:46:58</publishTime>
+    </File>
+    <File Include="Images/Tooltips/en/Employee Handbook.png">
+      <publishTime>01/15/2016 11:46:56</publishTime>
+    </File>
+    <File Include="Images/Tooltips/en/General Plant Procedures.png">
+      <publishTime>01/15/2016 11:46:54</publishTime>
+    </File>
+    <File Include="Images/Tooltips/en/Inspection Plan.png">
+      <publishTime>01/15/2016 11:46:56</publishTime>
+    </File>
+    <File Include="Images/Tooltips/en/Machine Instructions.png">
+      <publishTime>01/15/2016 11:46:50</publishTime>
+    </File>
+    <File Include="Images/Tooltips/en/MH Procedures.png">
+      <publishTime>01/15/2016 11:46:44</publishTime>
+    </File>
+    <File Include="Images/Tooltips/en/Move Standards.png">
+      <publishTime>01/15/2016 11:46:50</publishTime>
+    </File>
+    <File Include="Images/Tooltips/en/One Point Lessons.png">
+      <publishTime>01/15/2016 11:45:02</publishTime>
+    </File>
+    <File Include="Images/Tooltips/en/Procedures.png">
+      <publishTime>01/15/2016 11:44:58</publishTime>
+    </File>
+    <File Include="Images/Tooltips/en/Production Drawing.png">
+      <publishTime>01/15/2016 11:45:00</publishTime>
+    </File>
+    <File Include="Images/Tooltips/en/Quality Alerts.png">
+      <publishTime>01/15/2016 11:45:04</publishTime>
+    </File>
+    <File Include="Images/Tooltips/en/Quality Policy.png">
+      <publishTime>01/15/2016 11:45:16</publishTime>
+    </File>
+    <File Include="Images/Tooltips/en/Saftey Data Sheets.png">
+      <publishTime>01/15/2016 11:45:12</publishTime>
+    </File>
+    <File Include="Images/Tooltips/en/Setup Sheets.png">
+      <publishTime>01/15/2016 11:45:06</publishTime>
+    </File>
+    <File Include="Images/Tooltips/en/Shop Order.png">
+      <publishTime>01/15/2016 11:45:02</publishTime>
+    </File>
+    <File Include="Images/Tooltips/en/Visual Aids.png">
+      <publishTime>01/15/2016 11:45:08</publishTime>
+    </File>
+    <File Include="Images/Tooltips/en/Work Instruction.png">
+      <publishTime>07/28/2015 10:42:48</publishTime>
+    </File>
+    <File Include="Images/Tooltips/en/Work Instructions.png">
+      <publishTime>01/15/2016 11:45:08</publishTime>
+    </File>
+    <File Include="Images/Tooltips/es/Control Plan.png">
+      <publishTime>01/15/2016 11:40:32</publishTime>
+    </File>
+    <File Include="Images/Tooltips/es/Deviations.png">
+      <publishTime>01/15/2016 11:41:58</publishTime>
+    </File>
+    <File Include="Images/Tooltips/es/Inspection Plan.png">
+      <publishTime>01/15/2016 11:42:02</publishTime>
+    </File>
+    <File Include="Images/Tooltips/es/One Point Lessons.png">
+      <publishTime>01/15/2016 11:42:26</publishTime>
+    </File>
+    <File Include="Images/Tooltips/es/Production Drawing.png">
+      <publishTime>01/15/2016 11:42:00</publishTime>
+    </File>
+    <File Include="Images/Tooltips/es/Quality Policy.png">
+      <publishTime>01/15/2016 11:41:56</publishTime>
+    </File>
+    <File Include="Images/Tooltips/es/Visual Aids.png">
+      <publishTime>01/15/2016 11:42:00</publishTime>
+    </File>
+    <File Include="Images/Tooltips/es/Work Instruction.png">
+      <publishTime>01/15/2016 11:42:06</publishTime>
+    </File>
+    <File Include="Images/work instruction.png">
+      <publishTime>03/22/2016 00:23:26</publishTime>
+    </File>
+    <File Include="Models/CDModel.edmx.diagram">
+      <publishTime>01/25/2016 18:41:12</publishTime>
+    </File>
+    <File Include="Models/EBinderModel.edmx.diagram">
+      <publishTime>08/11/2016 16:00:02</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>07/27/2015 11:39:26</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.7.1-vsdoc.js">
+      <publishTime>07/27/2015 11:39:06</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.7.1.js">
+      <publishTime>07/27/2015 11:39:06</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.7.1.min.js">
+      <publishTime>07/27/2015 11:39:06</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui-1.8.20.js">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui-1.8.20.min.js">
+      <publishTime>07/27/2015 11:39:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery.unobtrusive-ajax.js">
+      <publishTime>07/27/2015 11:39:12</publishTime>
+    </File>
+    <File Include="Scripts/jquery.unobtrusive-ajax.min.js">
+      <publishTime>07/27/2015 11:39:12</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate-vsdoc.js">
+      <publishTime>07/27/2015 11:39:08</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>07/27/2015 11:39:08</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>07/27/2015 11:39:08</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.js">
+      <publishTime>07/27/2015 11:39:12</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>07/27/2015 11:39:12</publishTime>
+    </File>
+    <File Include="Scripts/knockout-2.1.0.debug.js">
+      <publishTime>07/27/2015 11:39:26</publishTime>
+    </File>
+    <File Include="Scripts/knockout-2.1.0.js">
+      <publishTime>07/27/2015 11:39:26</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.5.3.js">
+      <publishTime>07/27/2015 11:39:12</publishTime>
+    </File>
+    <File Include="Scripts/_references.js">
+      <publishTime>07/27/2015 11:38:58</publishTime>
+    </File>
+    <File Include="Views/Filter/Filter.cshtml">
+      <publishTime>01/25/2016 18:44:36</publishTime>
+    </File>
+    <File Include="Views/Help/Help.cshtml">
+      <publishTime>08/12/2016 10:37:51</publishTime>
+    </File>
+    <File Include="Views/Home/Help.cshtml">
+      <publishTime>11/02/2015 16:03:53</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>02/23/2016 18:20:26</publishTime>
+    </File>
+    <File Include="Views/Home/ReferenceList.cshtml">
+      <publishTime>08/11/2016 17:57:43</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>07/27/2015 11:39:00</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>06/27/2016 11:44:54</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>07/27/2015 11:39:00</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>07/27/2015 11:39:00</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>08/12/2016 10:40:55</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

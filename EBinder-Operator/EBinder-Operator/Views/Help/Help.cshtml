@@ -1,0 +1,41 @@
+﻿@using EBinder_Operator.App_GlobalResources
+@{
+    ViewBag.Title = "EBinder+ " + Resource.Help;
+}
+
+
+<h1>@ViewBag.Title</h1>
+<p class="text-danger">@ViewData["Error"]</p>
+<section id="help">
+    <div id="one">
+        @using (Html.BeginForm())
+        {
+            <fieldset class="helpHeight">
+                <legend><b>@Resource.ContactUs</b></legend>
+                <p>@Resource.ContactMsg</p>
+                <table>
+                    <tr>
+                        <td>@Resource.FullName</td>
+                        <td>@Html.TextBox("Name")</td>
+                    </tr>
+                    <tr>
+                        <td>@Resource.IssueDescription</td>
+                        <td>@Html.TextArea("Issue")</td>
+                    </tr>
+                </table>
+                <p>
+                    <input type="submit" value="@Resource.SubmitHelp" name="Submit" />
+                </p>
+            </fieldset>
+        }
+    </div>
+    <div id="two">
+        <fieldset class="helpHeight">
+            <legend><b>EBinder+ @Resource.WorkInstruction</b></legend>
+            <p>@Resource.WorkInstructionMsg</p>
+            <a href="@Url.Action("Help", "Help")">
+                <img alt="EBinder Work Instruction" src="~/Images/work instruction.png" />
+            </a>
+        </fieldset>
+    </div>
+</section>

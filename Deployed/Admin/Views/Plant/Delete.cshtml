@@ -1,0 +1,34 @@
+﻿@model EBinder.Models.Plant
+@using EBinder.App_GlobalResources
+
+
+@{
+    ViewBag.Title = Resource.Delete;
+}
+
+<h2>@Resource.Delete</h2>
+
+<h3>@Resource.DeleteConfirmation</h3>
+<fieldset>
+    <legend>Plant</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Region.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Region.Name)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="@Resource.Delete" /> |
+        @Html.ActionLink(Resource.BackToList, "Index")
+    </p>
+}

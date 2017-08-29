@@ -1,0 +1,71 @@
+﻿
+@using EBinder.Models
+@using EBinder.App_GlobalResources
+@{
+    ViewBag.Title = Resource.CreateLink;
+    var part = ViewData["Part"] as Part;
+    string partNum = "";
+    if (part != null && part.PartDesc != Resource.All) { partNum = part.PartDesc; }
+}
+
+<h2>@ViewBag.Title</h2>
+@using (Html.BeginForm(new { id = ViewData["RefId"] }))
+{
+    <div style="padding-bottom:5px">@Html.DropDownList("level", ViewData["Type"] as List<SelectListItem>)</div>
+    <div name="dd" id="dd" class="dd">@Html.DropDownList("linkLoc", ViewData["cells"] as List<SelectListItem>)</div>
+    <div name="part" id="part" class="part" hidden="hidden" style="padding-left:5px;">@Html.TextBox("PartDesc", partNum)</div>
+    <p><input type="submit" value="@Resource.CreateLink" /></p>
+}
+
+@section scripts {
+    <script src="../../Scripts/jquery-1.7.1.js" type="text/javascript"></script>
+<script src="../../Scripts/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#level").change(function () {
+            if($("#level").val() != "Part")
+            {
+                $(".dd").show();
+                $(".part").hide();
+                $("#linkLoc").empty();
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("GetList")', // we are calling json method
+                    dataType: 'json',
+                    data: { id: $("#level").val() },
+                    success: function (locs) {
+                        if (locs != null)
+                        {
+                            $.each(locs, function (i, loc) {
+                                $("#linkLoc").append('<option value="' + loc.Value + '">' + loc.Text + '</option>');
+                            });
+                        }
+                        else
+                        {
+                            alert("Error: Returned null dataset")
+                        }
+                    },
+                    error: function (ex) {
+                        alert('Failed to retrieve filter info.' + ex);
+                    }
+                });
+            }
+            else
+            {
+                $(".part").show();
+                $(".dd").hide();
+            }
+        })
+
+        $(function() {
+            var types = @Html.Raw(ViewData["Parts"]);
+            $("#PartDesc").autocomplete({
+                source: types
+            });
+        });
+    });
+</script>
+}

@@ -1,0 +1,63 @@
+﻿@model EBinder.Models.Reference
+@using EBinder.App_GlobalResources
+@{
+    ViewBag.Title = Resource.Edit;
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>@Resource.Reference</legend>
+
+        @Html.HiddenFor(model => model.ReferenceID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Title)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Title)
+            @Html.ValidationMessageFor(model => model.Title)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Number)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Number)
+            @Html.ValidationMessageFor(model => model.Number)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.URL)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.URL)
+            @Html.ValidationMessageFor(model => model.URL)
+        </div>
+
+        <div class="editor-label">
+            @Resource.ReferenceType
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("ReferenceTypeID", String.Empty)
+            @Html.ValidationMessageFor(model => model.ReferenceTypeID)
+        </div>
+
+        @Html.HiddenFor(model=> model.FlagDate)
+
+        <p>
+            <input type="submit" value="@Resource.Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink(Resource.BackToList, "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

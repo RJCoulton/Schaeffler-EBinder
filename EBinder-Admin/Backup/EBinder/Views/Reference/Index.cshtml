@@ -1,0 +1,50 @@
+﻿@model IEnumerable<EBinder.Models.Reference>
+
+@{
+    ViewBag.Title = "References";
+}
+
+<h2>@ViewBag.Title</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.URL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.referenceType.TypeName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.URL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.referenceType.TypeName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ReferenceID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ReferenceID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ReferenceID })
+        </td>
+    </tr>
+}
+
+</table>

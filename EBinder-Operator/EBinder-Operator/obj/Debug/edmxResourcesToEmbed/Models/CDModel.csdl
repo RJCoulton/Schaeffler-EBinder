@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CDModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityType Name="ADInfo">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Department" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SAPCostCenter">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Number" />
+      <PropertyRef Name="UpdatedOn" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Number" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="Company" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="Hierarchy" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="Responsible" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="ResponsibleAlt" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="ValidOn" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="ExpireOn" Type="DateTime" Precision="3" />
+    <Property Name="CreatedOn" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ExpireOnTest" Type="DateTime" Precision="3" />
+    <Property Name="Erase" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="SAPEmployee">
+    <Key>
+      <PropertyRef Name="ClockNumber" />
+      <PropertyRef Name="IsActive" />
+      <PropertyRef Name="UpdateCheck" />
+      <PropertyRef Name="UpdatedOn" />
+    </Key>
+    <Property Name="ClockNumber" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="BirthDate" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="CostCenter" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="OrgUnitNumber" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="Department" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="UpdateCheck" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SAPPart">
+    <Key>
+      <PropertyRef Name="SAPMaterialNum" />
+      <PropertyRef Name="CompanyNumber" />
+      <PropertyRef Name="PartDesc" />
+    </Key>
+    <Property Name="SAPMaterialNum" Type="String" MaxLength="18" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CompanyNumber" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PartDesc" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="CDContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ADInfoes" EntityType="Self.ADInfo" />
+    <EntitySet Name="SAPCostCenters" EntityType="Self.SAPCostCenter" />
+    <EntitySet Name="SAPEmployees" EntityType="Self.SAPEmployee" />
+    <EntitySet Name="SAPParts" EntityType="Self.SAPPart" />
+  </EntityContainer>
+</Schema>

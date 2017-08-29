@@ -1,0 +1,376 @@
+﻿/***********************/
+/****** Header *********/
+/***********************/
+
+header
+{
+    text-align: center;
+    background-color: #efeeef;
+    color: #333;
+    max-width: 1250px;
+    margin: auto;
+    padding: 0;
+}
+.filterInfo
+{
+text-align: left;
+padding-bottom: 10px;
+margin-top: 10px;
+display: inline-block;
+font-family:Arial;
+font-size: 15px;
+font-weight: bold;
+}
+
+/************************************/
+/************* Tabs *****************/
+/************************************/
+
+.tabs input[type=radio] {
+    display:none;
+}
+       
+.tabs {
+    float: none;
+    list-style: none;
+    width: 100%;
+    position: relative;
+    height: 585px;
+    padding: 0;
+    margin: auto;
+}
+       
+.tabs li{
+    float: left;
+}
+       
+.tabs label {
+    display: table-cell;
+    color: black;
+    padding: 5px 18px 5px 18px;
+    font-size: 21px;
+    vertical-align: middle;
+    max-width: 215px;
+    font-weight: bold;
+    text-align: center;
+    height: 50px;
+    background: #FFFFFF;
+    cursor: pointer;
+    position: relative;
+    border: 1px solid black;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    z-index: 3;
+}
+ 
+.tabs label:hover {
+    background: LightYellow;
+}
+       
+.tab-content {
+    z-index: 2;
+    display: none;
+    left:0;
+    width: 100%;
+    padding-bottom: 20px;
+    font-size: 20px;
+    position: absolute;
+    background-color:LightYellow;
+    border: 1px solid black;
+    border-top-right-radius: 10px;
+    box-shadow: 0px 0px 25px
+}
+
+[id^=tab]:checked + label {
+    background-color: LightYellow;
+    border-bottom: 1px solid LightYellow;
+    color: black;
+    top: 0;
+    z-index:3;
+}
+        
+[id^=tab]:checked ~ [id^=tab-content] {
+    display: block;
+    margin-top: -1px;
+}
+
+/*****************************************/
+/*************** Icons *******************/
+/*****************************************/
+a img
+{
+   border:none; 
+   vertical-align:top;
+}
+
+.iconLayout
+{
+    height: 250px;
+    text-align: center;
+    margin: auto;
+}
+
+.iconContainer
+{
+    position:relative;
+    width: 200px;
+    height: 225px;
+    margin: 25px;
+    display:inline-block;
+}
+
+.iconContainer .iconShadow
+{
+    position: absolute;
+    bottom: -20px;
+    left: -50px;
+    z-index: -1;
+}
+
+.iconContainer .iconHighlight
+{
+    position:absolute;
+    top:0px;
+    width: 200px;
+    height: 200px;
+    background: Black;
+    opacity: 0;
+    border-radius: 7px;
+    
+}
+
+.iconContainer:hover .iconHighlight
+{
+    opacity: 0.3;
+}
+
+
+
+.iconContainer .tooltip {
+    background: Black;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    display: none;
+    left: 210px;
+    margin-bottom: 15px;
+    opacity: 0;
+    padding: 5px;
+    position: absolute;
+    transition: all .25s ease-out;
+    top: -10px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+    z-index: 99;
+    border-radius: 5px;
+    
+}
+.tooltip .landscape
+{
+    width: 200px;
+}
+
+.tooltip .portrait
+{
+    width: 200px;
+}
+
+/* This bridges the gap so you can mouse into the tooltip without it disappearing */
+.iconContainer .tooltip:before {
+  content: " ";
+  left: 0;
+  top: 0;
+  position: absolute;
+  display: block;
+  width: 100%;
+}  
+
+/* CSS Triangles - see Trevor's post */
+.iconContainer .tooltip:after {
+    width: 0; 
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent; 
+    border-right:20px solid black;
+
+  
+  top: 40%;
+  content: " ";
+  height: 0;
+  left:-15px;
+  position: absolute;
+  
+}
+  
+.iconContainer:hover .tooltip {
+  opacity: 1;
+  display: block;
+}
+
+/*****************************/
+/********* List **************/
+/*****************************/
+
+.listIcon
+{
+    width: 200px;
+    text-align: center;
+    margin: auto;
+    display: inline-block;
+    float: left;
+    padding: 0;
+}
+.listLayout
+{
+    text-align: center;
+    height: 585px;
+    margin: auto;
+    display: block;
+    padding: 25px;
+}
+
+.listContainer
+{
+    
+    height: 350px;
+    display: inline-block;
+}
+
+.listTitle
+{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: #29A629;
+    color: White;
+    font-weight: bold;
+    font-size: 28px;
+    font-family: Aharoni;
+    padding: 5px;
+    padding-top: 10px;
+    text-shadow: 0 0 4px Black;
+    
+}
+
+.list
+{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: LightGray;
+    font-family:Arial;
+    font-size: 18px;
+    padding: 15px;
+    
+}
+
+.scroll
+{
+    overflow-y: auto;
+    max-height: 400px;
+}
+
+.listTable
+{
+    min-width: 650px;
+    max-width: 750px;
+}
+
+.linkTitle
+{
+   padding: 3px 10px;
+   text-align:left; 
+}
+
+.linkNumber
+{
+   padding: 3px 10px;
+   text-align:left;
+   max-width: 80px; 
+}
+
+/****************************/
+
+div#spinner
+{
+    display: none;
+    width:120px;
+    height: 120px;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    background:url(../Images/hex-loader.gif) no-repeat center #fff;
+    text-align:center;
+    padding: 10px;
+    font:normal 16px Tahoma, Geneva, sans-serif;
+    border:1px solid #666;
+    margin-left: -50px;
+    margin-top: -50px;
+    z-index:2;
+    overflow: auto;
+}
+
+.text-danger
+{
+    color: Red;
+    font-weight: bold;
+    font-size: 16px;
+    text-align:center;
+    padding: 10px;
+}
+
+html {
+    background-color: #e2e2e2;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #fff;
+    color: #333;
+    max-width: 1089px;
+    margin: auto;
+}
+
+footer, hgroup,
+nav, section {
+    display: block;
+}
+
+mark {
+    background-color: #a6dbed;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.clear-fix:after {
+    content: ".";
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+/* main layout
+----------------------------------------------------------*/
+.content-wrapper {
+    margin: 0 auto;
+    max-width: 960px;
+}
+
+#body {
+    background-color: #efeeef;
+    clear: both;
+    padding: 0px 35px 35px 35px;
+}
+
+footer {
+    clear: both;
+    background-color: #e2e2e2;
+    font-size: .8em;
+    height: 100px;
+}

@@ -1,0 +1,102 @@
+﻿@model EBinder.Models.Reference
+@using EBinder.App_GlobalResources
+@{
+    ViewBag.Title = Resource.Details;
+}
+
+<h2>@ViewBag.Title</h2>
+
+<fieldset>
+    <legend>@Resource.Reference</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">@Html.DisplayNameFor(model => model.userType.Name)
+         @Html.DisplayNameFor(model => model.Number)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Number)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.URL)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.URL)
+    </div>
+
+    <div class="display-label">
+         @Resource.ReferenceType
+    </div>
+    <div class="display-field">
+        @if (Session["Language"].ToString() == "es" && Model.ReferenceType.TypeName_es != null)
+        {
+            @Html.DisplayFor(model => model.ReferenceType.TypeName_es)
+        }
+        else
+        {
+            @Html.DisplayFor(model => model.ReferenceType.TypeName_en)
+        }
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.FlagDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FlagDate)
+    </div>
+</fieldset>
+<fieldset>
+    <legend>@Resource.LinkedTo</legend>
+    @Html.ActionLink(Resource.CreateNew, "CreateLink", new { id = Model.ReferenceID })
+    <p></p>
+    <table>
+        @foreach (EBinder.Models.Region region in ViewData["LinkRegions"] as List<EBinder.Models.Region>)
+        {
+            <tr>
+                <td class="table-cell">Region | @region.Name</td>
+                <td class="table-cell">@Html.ActionLink(Resource.RemoveLink, "Unlink", new{refId = Model.ReferenceID, locId = region.RegionID, loc = "Region"}, new { onclick = "return confirm('Are you sure you wish to delete this link?');" })</td>
+            </tr>   
+        }
+        @foreach (EBinder.Models.Plant plant in ViewData["LinkPlants"] as List<EBinder.Models.Plant>)
+        {
+            <tr>
+                <td class="table-cell">Plant | @plant.Name</td>
+                <td class="table-cell">@Html.ActionLink(Resource.RemoveLink, "Unlink", new { refId = Model.ReferenceID, locId = plant.PlantID, loc = "Plant" }, new { onclick = "return confirm('Are you sure you wish to delete this link?');" })</td>
+            </tr>   
+        }
+        @foreach (EBinder.Models.Department dept in ViewData["LinkDept"] as List<EBinder.Models.Department>)
+        {
+            <tr>
+                <td class="table-cell">Department | @dept.Name</td>
+                <td class="table-cell">@Html.ActionLink(Resource.RemoveLink, "Unlink", new { refId = Model.ReferenceID, locId = dept.DepartmentID, loc = "Department" }, new { onclick = "return confirm('Are you sure you wish to delete this link?');" })</td>
+            </tr>   
+        }
+        @foreach (EBinder.Models.Cell cell in ViewData["LinkCells"] as List<EBinder.Models.Cell>)
+        {
+            <tr>
+                <td class="table-cell">Cell | @cell.Name</td>
+                <td class="table-cell">@Html.ActionLink(Resource.RemoveLink, "Unlink", new { refId = Model.ReferenceID, locId = cell.CellID, loc = "Cell" }, new { onclick = "return confirm('Are you sure you wish to delete this link?');" })</td>
+            </tr>   
+        }
+        @foreach (EBinder.Models.Part part in ViewData["LinkParts"] as List<EBinder.Models.Part>)
+        {
+            <tr>
+                <td class="table-cell">Part | @part.PartDesc</td>
+                <td class="table-cell">@Html.ActionLink(Resource.RemoveLink, "Unlink", new { refId = Model.ReferenceID, locId = part.PartDesc, loc = "Part" }, new { onclick = "return confirm('Are you sure you wish to delete this link?');" })</td>
+            </tr>   
+        }
+    </table>
+    
+</fieldset>
+        
+
+<p>
+    @Html.ActionLink(Resource.Edit, "Edit", new { id=Model.ReferenceID }) |
+    @Html.ActionLink(Resource.BackToReferences, "Index")
+</p>

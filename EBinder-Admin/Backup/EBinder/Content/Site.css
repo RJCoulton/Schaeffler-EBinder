@@ -1,0 +1,93 @@
+﻿body {
+font-size: .85em;
+font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+color: #232323;
+background-color: #fff;
+}
+
+header, footer, nav, section {
+display: block;
+}
+
+.header
+{
+text-align: left;
+padding-bottom: 10px;
+margin-top: 10px;
+display: inline-block;
+font-family:Arial;
+font-size: 15px;
+font-weight: bold;
+}
+
+.filter
+{
+background: url(../Content/imgs/filter.png) no-repeat top left;
+display: inline-block;
+width: 65px;
+height: 65px;
+text-indent: -9999px; /* hides the link text */
+float: left;
+
+}
+
+/* Styles for basic forms
+-----------------------------------------------------------*/
+.text-danger {
+color: Red;
+font-weight: bold;
+}
+
+fieldset {
+border: 1px solid #ddd;
+padding: 0 1.4em 1.4em 1.4em;
+margin: 0 0 1.5em 0;
+}
+
+legend {
+font-size: 1.2em;
+font-weight: bold;
+}
+
+textarea {
+min-height: 75px;
+}
+
+.editor-label {
+margin: 1em 0 0 0;
+}
+
+.editor-field {
+margin: 1em 0 0 0;
+}
+
+.display-label {
+text-decoration: underline;
+}
+
+.display-field {
+}
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+color: #f00;
+}
+
+.field-validation-valid {
+display: none;
+}
+
+.input-validation-error {
+border: 1px solid #f00;
+background-color: #fee;
+}
+
+.validation-summary-errors {
+font-weight: bold;
+color: #f00;
+}
+
+.validation-summary-valid {
+display: none;
+}

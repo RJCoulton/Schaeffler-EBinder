@@ -1,0 +1,59 @@
+﻿@using EBinder_Operator.Models;
+@using EBinder_Operator.App_GlobalResources;
+
+@{
+    ViewBag.Title = "EBinder+";
+}
+<ul class=tabs>
+    @{
+        string tab = "tab";
+        string tabContent = "tab-content";
+        string selected = "checked";
+        int count = 1;
+        int iconCount = 1;
+
+        foreach (Category Category in ViewData["Categories"] as List<Category>)
+        {
+            int icons = Category.List.Count();
+            int rows = 0;
+            int perRow = 0;
+            string height = "height: " + 225;
+            if (icons == 0) { icons++; }
+            rows = (icons + 3) / 4;
+            perRow = (icons + (rows - 1)) / rows;
+            height = "height: " + (rows * 225);
+            <li>
+                <input type="radio" @selected name="tabs" id="@tab@count">
+                <label for="@tab@count">@Category.Name</label>
+                <div id="@tabContent@count" class="@tabContent" style="@height">
+                    <div class="iconLayout">
+                        @foreach (var icon in Category.List)
+                        {
+                            if (iconCount > perRow)
+                            {
+                                @:</div>
+                                @:<div class="iconLayout">
+                                iconCount = 1;
+                            }
+                            string lang = Session["Language"] != null ? Session["Language"].ToString() : "en";
+                            string iconSrc = File.Exists(Server.MapPath("/Images/Icons/" + lang + "/" + icon.TypeName_en + ".png")) ? @Url.Content("~/Images/Icons/" + lang + "/" + icon.TypeName_en + ".png") : @Url.Content("~/Images/Icons/en/" + icon.TypeName_en + ".png");
+                            string tooltipSrc = File.Exists(Server.MapPath("/Images/Tooltips/" + lang + "/" + icon.TypeName_en + ".png")) ? @Url.Content("~/Images/Tooltips/" + lang + "/" + icon.TypeName_en + ".png") : @Url.Content("~/Images/Tooltips/en/" + icon.TypeName_en + ".png");
+                            <a href="@Url.Action("ReferenceList", new { iconId = icon.ReferenceTypeID })" style="color:transparent">
+                                <div class="iconContainer">
+                                    <img src="@iconSrc" alt="@icon.TypeName_en" height="200" />
+                                    <div class="iconShadow"><img src="~/Images/shadow.png" alt="Shadow" /></div>
+                                    <div class="iconHighlight"></div>
+                                    <div class="tooltip"><img class="landscape" src="@tooltipSrc" alt="@icon.TypeName_en" />@Resource.ClickToOpen</div>
+                                </div>
+                            </a>
+                            iconCount++;
+                        }
+                    </div>
+                </div>
+            </li>
+            iconCount = 1;
+            count++;
+            selected = "";
+        }
+    }
+</ul>

@@ -1,0 +1,76 @@
+﻿@model IEnumerable<EBinder.Models.Reference>
+@using EBinder.App_GlobalResources
+@{
+    ViewBag.Title = Resource.References;
+}
+
+<h2>@ViewBag.Title</h2>
+<p>
+    @Html.ActionLink(Resource.ReturnToDashboard, "Index", "Home")
+</p>
+    <fieldset>
+        <legend>@Resource.FilterOptions</legend>
+        @using (Html.BeginForm("FilterIndex", "Reference", FormMethod.Post))
+        {
+            <div class="RefFilter">@Resource.ReferenceType @Html.DropDownList("ReferenceTypeID", Resource.All)</div>
+            <div class="RefFilter">@Html.CheckBox("Flagged") @Resource.FilterFlag</div>
+            <div class="RefFilter">@Html.RadioButton("GlobalFilter", "global") @Resource.FilterGlobal</div>
+            <div class="RefFilter">@Html.RadioButton("GlobalFilter", "noLink") @Resource.FilterNoLink</div>
+            <div class="RefFilter">@Resource.SearchCriteria @Html.TextBox("Search")</div>
+            <p>
+                <input type="submit" value="@Resource.ApplyFilter" />
+            </p>
+        }
+    </fieldset>
+<p>
+    @Html.ActionLink(Resource.CreateNew, "Create")
+</p>
+<table>
+    <tr>
+        <th class="table-header">
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th class="table-header">
+            @Html.DisplayNameFor(model => model.Number)
+        </th>
+        <th class="table-header">
+            @Html.DisplayNameFor(model => model.ReferenceType.TypeName_en)
+        </th>
+        <th class="table-header">
+            @Html.DisplayNameFor(model => model.FlagDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td class="table-cell">
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td  class="table-cell">
+            @Html.DisplayFor(modelItem => item.Number)
+        </td>
+        <td  class="table-cell">
+            @if (Session["Language"].ToString() == "es")
+                {
+                @Html.DisplayFor(modelItem => item.ReferenceType.TypeName_es)
+            }
+            else
+            {
+                @Html.DisplayFor(modelItem => item.ReferenceType.TypeName_en)
+            }
+        </td>
+        <td  class="table-cell">
+            @item.FlagDate.ToShortDateString()
+        </td>
+        <td class="table-cell">
+            <a href="@item.URL" download>@Resource.Test</a> |
+            @Html.ActionLink(Resource.Flag, "Flag", new { id = item.ReferenceID }, new { onclick = "return confirm('"+ Resource.FlagConfirmation +"');" }) |
+            @Html.ActionLink(Resource.Edit, "Edit", new { id=item.ReferenceID }) |
+            @Html.ActionLink(Resource.Details, "Details", new { id=item.ReferenceID }) |
+            @Html.ActionLink(Resource.Delete, "Delete", new { id=item.ReferenceID }, new { onclick = "return confirm('"+ Resource.DeleteConfirmation +"');" })
+        </td>
+    </tr>
+}
+
+</table>

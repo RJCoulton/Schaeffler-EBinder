@@ -1,0 +1,150 @@
+﻿@using EBinder_Operator.App_GlobalResources
+@using EBinder_Operator.Models
+@{
+    ViewBag.Title = Resource.ChangeFilter;
+    var part = ViewData["Part"] as Part;
+    string partNum = "";
+    if (part != null && part.PartDesc != Resource.All) { partNum = part.PartDesc; }
+}
+
+<h2>@Resource.FilterMsg</h2>
+
+@using (Html.BeginForm())
+{
+
+    <fieldset>
+        <table>
+            @if (Session["UserType"].ToString() == "Administrator")
+            {
+                <tr>
+                    <td>@Resource.Region</td>
+                    <td>@Html.DropDownList("Regions", ViewData["Regions"] as List<SelectListItem>)</td>
+                </tr>
+                <tr>
+                    <td>@Resource.Plant</td>
+                    <td>@Html.DropDownList("Plants", ViewData["Plants"] as List<SelectListItem>)</td>
+                </tr>
+            }
+            <tr>
+                <td>@Resource.Department</td>
+                <td>@Html.DropDownList("Departments", ViewData["Departments"] as List<SelectListItem>)</td>
+            </tr>
+            <tr>
+                <td>@Resource.Cell</td>
+                <td>@Html.DropDownList("Cells", ViewData["Cells"] as List<SelectListItem>)</td>
+            </tr>
+            <tr>
+                <td>@Resource.Part</td>
+                <td style="padding-left:5px;">@Html.TextBox("PartDesc", partNum)</td>
+            </tr>
+        </table><p>
+            <input type="submit" value="@Resource.ApplyFilter" name="Submit" />
+            <button onclick="window.history.back">@Resource.Cancel</button>
+        </p>
+    </fieldset>
+}
+
+@section scripts {
+    <script src="../../Scripts/jquery-1.7.1.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery-1.7.1.min.js" type="text/javascript"></script>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#Regions").change(function () {
+                $("#Plants").empty();
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("GetPlants")', // we are calling json method
+                    dataType: 'json',
+                    data: { id: $("#Regions").val() },
+                    success: function (plants) {
+                        if (plants != null)
+                        {
+                            $.each(plants, function (i, plant) {
+                                $("#Plants").append('<option value="' + plant.Value + '">' + plant.Text + '</option>');
+                            });
+                        }
+                        else
+                        {
+                            alert("Error: Plants returned null")
+                        }
+
+                        $("#Plants").change();
+                    },
+                    error: function (ex) {
+                        alert('Failed to retrieve plants.' + ex);
+                    }
+                });
+                return false;
+            })
+
+            $("#Plants").change(function () {
+                $("#Departments").empty();
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("GetDepartments")', // we are calling json method
+                    dataType: 'json',
+                    data: { id: $("#Plants").val(), regionID: $("#Regions").val() },
+                    success: function (departments) {
+                        if (departments != null)
+                        {
+                            $.each(departments, function (i, department) {
+                                $("#Departments").append('<option value="' + department.Value + '">' + department.Text + '</option>');
+                            });
+                        }
+                        else
+                        {
+                            alert("Error: Departmetns returned null")
+                        }
+
+                        $("#Departments").change();
+                    },
+                    error: function (ex) {
+                        alert('Failed to retrieve departments.' + ex);
+                    }
+                });
+                return false;
+            })
+
+            $("#Departments").change(function () {
+                $("#Cells").empty();
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("GetCells")', // we are calling json method
+                    dataType: 'json',
+                    data: { id: $("#Departments").val(), plantID: $("#Plants").val(), regionID: $("#Regions").val() },
+                    success: function (cells) {
+                        if (cells != null)
+                        {
+                            $.each(cells, function (i, cell) {
+                                $("#Cells").append('<option value="' + cell.Value + '">' + cell.Text + '</option>');
+                            });
+                        }
+                        else
+                        {
+                            alert("Error: Cells returned null");
+                        }
+                    },
+                    error: function (ex) {
+                        alert('Failed to retrieve cells.' + ex);
+                    }
+                });
+                return false;
+            })
+        });
+
+        $(function() {
+            var types = @Html.Raw(ViewData["Parts"]);
+            $("#PartDesc").autocomplete({
+                source: types
+            });
+        });
+
+    </script>
+
+
+}

@@ -1,0 +1,33 @@
+﻿@model EBinder.Models.Department
+
+@{
+    ViewBag.Title = Model.Plant.Name + " // " + Model.Name;
+}
+
+<h2>@ViewBag.Title</h2>
+
+<fieldset>
+<legend>Links</legend>
+    <table>
+     @foreach (var item in ViewData["Links"] as List<EBinder.Models.Reference>) {
+          
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.referenceType.TypeName) - 
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Number) -
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title) - 
+            </td>
+            <td>
+                @Html.ActionLink("Remove link", "RemoveLink", new { RefId=item.ReferenceID, PlantId = Model.Plant.Name })
+            </td>
+        </tr>
+    }
+    </table>
+</fieldset>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

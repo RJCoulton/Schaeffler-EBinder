@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EBinderModelStoreContainer" CdmEntityContainer="EBinderContext">
+    <EntitySetMapping Name="Cells">
+      <EntityTypeMapping TypeName="EBinderModel.Cell">
+        <MappingFragment StoreEntitySet="Cell">
+          <ScalarProperty Name="CellID" ColumnName="CellID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Workcenter" ColumnName="Workcenter" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="Part_PartID" ColumnName="Part_PartID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="EBinderModel.Department">
+        <MappingFragment StoreEntitySet="Department">
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PlantID" ColumnName="PlantID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Parts">
+      <EntityTypeMapping TypeName="EBinderModel.Part">
+        <MappingFragment StoreEntitySet="Part">
+          <ScalarProperty Name="PartID" ColumnName="PartID" />
+          <ScalarProperty Name="PartDesc" ColumnName="PartDesc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Plants">
+      <EntityTypeMapping TypeName="EBinderModel.Plant">
+        <MappingFragment StoreEntitySet="Plant">
+          <ScalarProperty Name="PlantID" ColumnName="PlantID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="RegionID" ColumnName="RegionID" />
+          <ScalarProperty Name="ContactEmail" ColumnName="ContactEmail" />
+          <ScalarProperty Name="Language" ColumnName="Language" />
+          <ScalarProperty Name="CompanyNumbers" ColumnName="CompanyNumbers" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="References">
+      <EntityTypeMapping TypeName="EBinderModel.Reference">
+        <MappingFragment StoreEntitySet="Reference">
+          <ScalarProperty Name="DefaultPlantID" ColumnName="DefaultPlantID" />
+          <ScalarProperty Name="ReferenceID" ColumnName="ReferenceID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="FlagDate" ColumnName="FlagDate" />
+          <ScalarProperty Name="ReferenceTypeID" ColumnName="ReferenceTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReferenceCategories">
+      <EntityTypeMapping TypeName="EBinderModel.ReferenceCategory">
+        <MappingFragment StoreEntitySet="ReferenceCategory">
+          <ScalarProperty Name="ReferenceCategoryID" ColumnName="ReferenceCategoryID" />
+          <ScalarProperty Name="CategoryName_en" ColumnName="CategoryName_en" />
+          <ScalarProperty Name="CategoryName_es" ColumnName="CategoryName_es" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReferenceTypes">
+      <EntityTypeMapping TypeName="EBinderModel.ReferenceType">
+        <MappingFragment StoreEntitySet="ReferenceType">
+          <ScalarProperty Name="ReferenceTypeID" ColumnName="ReferenceTypeID" />
+          <ScalarProperty Name="TypeName_en" ColumnName="TypeName_en" />
+          <ScalarProperty Name="TypeName_es" ColumnName="TypeName_es" />
+          <ScalarProperty Name="ReferenceCategoryID" ColumnName="ReferenceCategoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Regions">
+      <EntityTypeMapping TypeName="EBinderModel.Region">
+        <MappingFragment StoreEntitySet="Region">
+          <ScalarProperty Name="RegionID" ColumnName="RegionID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="EBinderModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="CellID" ColumnName="CellID" />
+          <ScalarProperty Name="UserTypeID" ColumnName="UserTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserTypes">
+      <EntityTypeMapping TypeName="EBinderModel.UserType">
+        <MappingFragment StoreEntitySet="UserType">
+          <ScalarProperty Name="UserTypeID" ColumnName="UserTypeID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="CellReferences" TypeName="EBinderModel.CellReferences" StoreEntitySet="CellReferences">
+      <EndProperty Name="Cell">
+        <ScalarProperty Name="CellID" ColumnName="CellId" />
+      </EndProperty>
+      <EndProperty Name="Reference">
+        <ScalarProperty Name="ReferenceID" ColumnName="ReferenceId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="DepartmentReferences" TypeName="EBinderModel.DepartmentReferences" StoreEntitySet="DepartmentReferences">
+      <EndProperty Name="Department">
+        <ScalarProperty Name="DepartmentID" ColumnName="DepartmentId" />
+      </EndProperty>
+      <EndProperty Name="Reference">
+        <ScalarProperty Name="ReferenceID" ColumnName="ReferenceId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="HomePageReferences" TypeName="EBinderModel.HomePageReferences" StoreEntitySet="HomePageReferences">
+      <EndProperty Name="Plant">
+        <ScalarProperty Name="PlantID" ColumnName="PlantId" />
+      </EndProperty>
+      <EndProperty Name="ReferenceType">
+        <ScalarProperty Name="ReferenceTypeID" ColumnName="ReferenceTypeId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PartReferences" TypeName="EBinderModel.PartReferences" StoreEntitySet="PartReferences">
+      <EndProperty Name="Part">
+        <ScalarProperty Name="PartID" ColumnName="PartId" />
+      </EndProperty>
+      <EndProperty Name="Reference">
+        <ScalarProperty Name="ReferenceID" ColumnName="ReferenceId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PlantReferences" TypeName="EBinderModel.PlantReferences" StoreEntitySet="PlantReferences">
+      <EndProperty Name="Plant">
+        <ScalarProperty Name="PlantID" ColumnName="PlantId" />
+      </EndProperty>
+      <EndProperty Name="Reference">
+        <ScalarProperty Name="ReferenceID" ColumnName="ReferenceId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ReferenceTypePlant" TypeName="EBinderModel.ReferenceTypePlant" StoreEntitySet="ReferenceTypePlant">
+      <EndProperty Name="Plant">
+        <ScalarProperty Name="PlantID" ColumnName="Plant_PlantID" />
+      </EndProperty>
+      <EndProperty Name="ReferenceType">
+        <ScalarProperty Name="ReferenceTypeID" ColumnName="ReferenceType_ReferenceTypeID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="RegionReferences" TypeName="EBinderModel.RegionReferences" StoreEntitySet="RegionReferences">
+      <EndProperty Name="Reference">
+        <ScalarProperty Name="ReferenceID" ColumnName="ReferenceId" />
+      </EndProperty>
+      <EndProperty Name="Region">
+        <ScalarProperty Name="RegionID" ColumnName="RegionId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

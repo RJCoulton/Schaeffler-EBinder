@@ -1,0 +1,42 @@
+﻿@model IEnumerable<EBinder.Models.ReferenceCategory>
+@using EBinder.App_GlobalResources
+@{
+    ViewBag.Title = Resource.ReferenceCategories;
+}
+
+<h2>@ViewBag.Title</h2>
+<p>
+    @Html.ActionLink(Resource.ReturnToDashboard, "Index", "Home")
+</p>
+<p>
+    @Html.ActionLink(Resource.CreateNew, "Create")
+</p>
+<table>
+    <tr>
+        <th class="table-header">
+            @Html.DisplayNameFor(model => model.CategoryName_en)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td class="table-cell">
+            @if (Session["Language"].ToString() == "es" && item.CategoryName_es != null)
+            {
+                @Html.DisplayFor(modelItem => item.CategoryName_es)
+            }
+            else
+            {
+                @Html.DisplayFor(modelItem => item.CategoryName_en)
+            }
+        </td>
+        <td class="table-cell">
+            @Html.ActionLink(Resource.Edit, "Edit", new { id=item.ReferenceCategoryID }) |
+            @Html.ActionLink(Resource.Delete, "Delete", new { id = item.ReferenceCategoryID }, new { onclick = "return confirm('"+ Resource.DeleteConfirmation + "');" })
+        </td>
+    </tr>
+}
+
+</table>
+

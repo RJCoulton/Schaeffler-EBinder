@@ -1,0 +1,94 @@
+﻿@model EBinder.Models.Reference
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Reference</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Number)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Number)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.URL)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.URL)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.referenceType.TypeName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.referenceType.TypeName)
+    </div>
+</fieldset>
+<fieldset>
+    <legend>Belongs to</legend>
+    <p>
+    @Html.ActionLink("Create New", "CreateLink", new { id = Model.ReferenceID })
+    </p>
+    <table>
+        @foreach (EBinder.Models.Region region in ViewData["LinkRegions"] as List<EBinder.Models.Region>)
+        {
+            <tr>
+                <td>Region</td>
+                <td>| @region.Name</td>
+                <td>@Html.ActionLink("Remove Link", "Unlink", new{refId = Model.ReferenceID, locId = region.RegionID, loc = "Region"})</td>
+            </tr>   
+        }
+        @foreach (EBinder.Models.Plant plant in ViewData["LinkPlants"] as List<EBinder.Models.Plant>)
+        {
+            <tr>
+                <td>Plant</td>
+                <td>| @plant.Name</td>
+                <td>@Html.ActionLink("Remove Link", "Unlink", new { refId = Model.ReferenceID, locId = plant.PlantID, loc = "Plant" })</td>
+            </tr>   
+        }
+        @foreach (EBinder.Models.Department dept in ViewData["LinkDept"] as List<EBinder.Models.Department>)
+        {
+            <tr>
+                <td>Department</td>
+                <td>| @dept.Name</td>
+                <td>@Html.ActionLink("Remove Link", "Unlink", new { refId = Model.ReferenceID, locId = dept.DepartmentID, loc = "Department" })</td>
+            </tr>   
+        }
+        @foreach (EBinder.Models.Cell cell in ViewData["LinkCells"] as List<EBinder.Models.Cell>)
+        {
+            <tr>
+                <td>Cell</td>
+                <td>| @cell.Name</td>
+                <td>@Html.ActionLink("Remove Link", "Unlink", new { refId = Model.ReferenceID, locId = cell.CellID, loc = "Cell" })</td>
+            </tr>   
+        }
+        @foreach (EBinder.Models.Part part in ViewData["LinkParts"] as List<EBinder.Models.Part>)
+        {
+            <tr>
+                <td>Part</td>
+                <td>| @part.PartNumber</td>
+                <td>@Html.ActionLink("Remove Link", "Unlink", new { refId = Model.ReferenceID, locId = part.PartID, loc = "Part" })</td>
+            </tr>   
+        }
+    </table>
+    
+</fieldset>
+        
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ReferenceID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

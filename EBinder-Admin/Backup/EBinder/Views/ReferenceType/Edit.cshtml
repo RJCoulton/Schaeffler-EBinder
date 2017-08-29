@@ -1,0 +1,45 @@
+﻿@model EBinder.Models.ReferenceType
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>ReferenceType</legend>
+
+        @Html.HiddenFor(model => model.ReferenceTypeID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TypeName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TypeName)
+            @Html.ValidationMessageFor(model => model.TypeName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ReferenceCategoryID, "Reference Category")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("ReferenceCategoryID", String.Empty)
+            @Html.ValidationMessageFor(model => model.ReferenceCategoryID)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

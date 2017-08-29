@@ -1,0 +1,53 @@
+﻿@model EBinder.Models.Reference
+@using EBinder.App_GlobalResources
+@{
+    ViewBag.Title = Resource.Delete;
+}
+
+<h2>@Resource.Delete</h2>
+
+<h3>@Resource.DeleteConfirmation</h3>
+<fieldset>
+    <legend>@Resource.Reference</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Number)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Number)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.URL)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.URL)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ReferenceType.TypeName_en)
+    </div>
+    <div class="display-field">
+        @if (Session["Language"].ToString() == "es")
+        {
+            @Html.DisplayFor(modelItem => item.ReferenceType.TypeName_es)
+        }
+        else
+        {
+            @Html.DisplayFor(modelItem => item.ReferenceType.TypeName_en)
+        }
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="@Resource.Delete" /> |
+        @Html.ActionLink(Resource.BackToList, "Index")
+    </p>
+}

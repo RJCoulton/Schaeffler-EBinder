@@ -1,0 +1,178 @@
+C:\Users\COULTRCH\Documents\Web Projects\EBinder\EBinder\bin\EBinder.dll
+C:\Users\COULTRCH\Documents\Web Projects\EBinder\EBinder\bin\EBinder.pdb
+C:\Users\COULTRCH\Documents\Web Projects\EBinder\EBinder\bin\Antlr3.Runtime.dll
+C:\Users\COULTRCH\Documents\Web Projects\EBinder\EBinder\bin\EntityFramework.dll
+C:\Users\COULTRCH\Documents\Web Projects\EBinder\EBinder\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\COULTRCH\Documents\Web Projects\EBinder\EBinder\bin\Newtonsoft.Json.dll
+C:\Users\COULTRCH\Documents\Web Projects\EBinder\EBinder\bin\System.Net.Http.dll
+C:\Users\COULTRCH\Documents\Web Projects\EBinder\EBinder\bin\System.Net.Http.Formatting.dll
+C:\Users\COULTRCH\Documents\Web Projects\EBinder\EBinder\bin\System.Net.Http.WebRequest.dll
+C:\Users\COULTRCH\Documents\Web Projects\EBinder\EBinder\bin\System.Web.Http.dll
+C:\Users\COULTRCH\Documents\Web Projects\EBinder\EBinder\bin\System.Web.Http.WebHost.dll
+C:\Users\COULTRCH\Documents\Web Projects\EBinder\EBinder\bin\System.Web.Mvc.dll
+C:\Users\COULTRCH\Documents\Web Projects\EBinder\EBinder\bin\System.Web.Optimization.dll
+C:\Users\COULTRCH\Documents\Web Projects\EBinder\EBinder\bin\System.Web.Providers.dll
+C:\Users\COULTRCH\Documents\Web Projects\EBinder\EBinder\bin\System.Web.Razor.dll
+C:\Users\COULTRCH\Documents\Web Projects\EBinder\EBinder\bin\System.Web.WebPages.Deployment.dll
+C:\Users\COULTRCH\Documents\Web Projects\EBinder\EBinder\bin\System.Web.WebPages.dll
+C:\Users\COULTRCH\Documents\Web Projects\EBinder\EBinder\bin\System.Web.WebPages.Razor.dll
+C:\Users\COULTRCH\Documents\Web Projects\EBinder\EBinder\bin\WebGrease.dll
+C:\Users\COULTRCH\Documents\Web Projects\EBinder\EBinder\bin\EntityFramework.xml
+C:\Users\COULTRCH\Documents\Web Projects\EBinder\EBinder\bin\Newtonsoft.Json.xml
+C:\Users\COULTRCH\Documents\Web Projects\EBinder\EBinder\bin\System.Net.Http.xml
+C:\Users\COULTRCH\Documents\Web Projects\EBinder\EBinder\bin\System.Net.Http.Formatting.xml
+C:\Users\COULTRCH\Documents\Web Projects\EBinder\EBinder\bin\System.Net.Http.WebRequest.xml
+C:\Users\COULTRCH\Documents\Web Projects\EBinder\EBinder\bin\System.Web.Http.xml
+C:\Users\COULTRCH\Documents\Web Projects\EBinder\EBinder\bin\System.Web.Http.WebHost.xml
+C:\Users\COULTRCH\Documents\Web Projects\EBinder\EBinder\bin\System.Web.Mvc.xml
+C:\Users\COULTRCH\Documents\Web Projects\EBinder\EBinder\bin\System.Web.Razor.xml
+C:\Users\COULTRCH\Documents\Web Projects\EBinder\EBinder\bin\System.Web.WebPages.xml
+C:\Users\COULTRCH\Documents\Web Projects\EBinder\EBinder\bin\System.Web.WebPages.Deployment.xml
+C:\Users\COULTRCH\Documents\Web Projects\EBinder\EBinder\bin\System.Web.WebPages.Razor.xml
+C:\Users\COULTRCH\Documents\Web Projects\EBinder\EBinder\obj\Debug\EBinder.csprojResolveAssemblyReference.cache
+C:\Users\COULTRCH\Documents\Web Projects\EBinder\EBinder\obj\Debug\EBinder.dll
+C:\Users\COULTRCH\Documents\Web Projects\EBinder\EBinder\obj\Debug\EBinder.pdb
+C:\Users\COULTRCH\Documents\Web Projects\EBinder\EBinder\obj\Debug\EBinder.Migrations.InitialCreate.resources
+C:\Users\COULTRCH\Documents\Web Projects\EBinder\EBinder\obj\Debug\EBinder.csproj.GenerateResource.Cache
+C:\Users\COULTRCH\Documents\Web Projects\EBinder\EBinder\obj\Debug\EBinder.Migrations.UpdateNavigationProperties.resources
+C:\Users\COULTRCH\Documents\Web Projects\EBinder\EBinder\obj\Debug\EBinder.Migrations.DataAnnotations.resources
+C:\Users\COULTRCH\Documents\Web Projects\EBinder\EBinder\obj\Debug\EBinder.Migrations.ReferenceNum.resources
+C:\Users\COULTRCH\Documents\Web Projects\EBinder\EBinder\obj\Debug\EBinder.Migrations.types.resources
+C:\Users\COULTRCH\Documents\Web Projects\EBinder\EBinder\obj\Debug\EBinder.Migrations.homepageicons.resources
+C:\Users\COULTRCH\Documents\Web Projects\EBinder\EBinder\obj\Debug\EBinder.Migrations.manytomany.resources
+C:\Users\COULTRCH\Documents\Web Projects\EBinder\EBinder\obj\Debug\EBinder.Migrations.namechange.resources
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\EBinder.dll.config
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\EBinder.dll
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\EBinder.pdb
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\Antlr3.Runtime.dll
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\EntityFramework.dll
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\Newtonsoft.Json.dll
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Net.Http.dll
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Net.Http.Formatting.dll
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Net.Http.WebRequest.dll
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Web.Http.dll
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Web.Http.WebHost.dll
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Web.Mvc.dll
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Web.Optimization.dll
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Web.Providers.dll
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Web.Razor.dll
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Web.WebPages.dll
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Web.WebPages.Razor.dll
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\WebGrease.dll
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\EntityFramework.xml
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\Newtonsoft.Json.xml
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Net.Http.xml
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Net.Http.Formatting.xml
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Net.Http.WebRequest.xml
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Web.Http.xml
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Web.Http.WebHost.xml
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Web.Mvc.xml
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Web.Razor.xml
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Web.WebPages.xml
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Web.WebPages.Razor.xml
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\obj\Debug\EBinder.dll
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\obj\Debug\EBinder.pdb
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\EntityFramework.SqlServer.dll
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\EntityFramework.SqlServer.xml
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\EntityFramework.SqlServerCompact.dll
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Data.SqlServerCe.dll
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\EntityFramework.SqlServerCompact.xml
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\es\EBinder.resources.dll
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\obj\Debug\EBinder.App_GlobalResources.Resource.resources
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\obj\Debug\EBinder.App_GlobalResources.Resource.es.resources
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\obj\Debug\EBinder.csproj.GenerateResource.Cache
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\obj\Debug\es\EBinder.resources.dll
+C:\Users\Richard\Desktop\Coyote Development\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\obj\Debug\EBinder.csprojResolveAssemblyReference.cache
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\EBinder.dll.config
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\EBinder.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\EBinder.pdb
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\es\EBinder.resources.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\Antlr3.Runtime.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\EntityFramework.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\EntityFramework.SqlServer.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\EntityFramework.SqlServerCompact.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\Newtonsoft.Json.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Data.SqlServerCe.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Net.Http.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Net.Http.Formatting.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Net.Http.WebRequest.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Web.Http.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Web.Http.WebHost.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Web.Mvc.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Web.Optimization.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Web.Providers.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Web.Razor.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Web.WebPages.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Web.WebPages.Razor.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\WebGrease.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\EntityFramework.xml
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\EntityFramework.SqlServer.xml
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\EntityFramework.SqlServerCompact.xml
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\Newtonsoft.Json.xml
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Net.Http.xml
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Net.Http.Formatting.xml
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Net.Http.WebRequest.xml
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Web.Http.xml
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Web.Http.WebHost.xml
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Web.Mvc.xml
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Web.Razor.xml
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Web.WebPages.xml
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\bin\System.Web.WebPages.Razor.xml
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\obj\Debug\EBinder.csprojResolveAssemblyReference.cache
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\obj\Debug\EBinder.App_GlobalResources.Resource.resources
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\obj\Debug\EBinder.App_GlobalResources.Resource.es.resources
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\obj\Debug\EBinder.csproj.GenerateResource.Cache
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\obj\Debug\es\EBinder.resources.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\obj\Debug\EBinder.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\EBinder-Admin\EBinder\obj\Debug\EBinder.pdb
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\bin\EBinder.dll.config
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\bin\EBinder.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\bin\EBinder.pdb
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\bin\es\EBinder.resources.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\bin\Antlr3.Runtime.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\bin\EntityFramework.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\bin\EntityFramework.SqlServer.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\bin\EntityFramework.SqlServerCompact.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\bin\Newtonsoft.Json.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\bin\System.Data.SqlServerCe.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\bin\System.Net.Http.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\bin\System.Net.Http.Formatting.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\bin\System.Net.Http.WebRequest.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\bin\System.Web.Http.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\bin\System.Web.Http.WebHost.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\bin\System.Web.Mvc.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\bin\System.Web.Optimization.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\bin\System.Web.Providers.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\bin\System.Web.Razor.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\bin\System.Web.WebPages.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\bin\System.Web.WebPages.Razor.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\bin\WebGrease.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\bin\EntityFramework.xml
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\bin\EntityFramework.SqlServer.xml
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\bin\EntityFramework.SqlServerCompact.xml
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\bin\Newtonsoft.Json.xml
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\bin\System.Net.Http.xml
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\bin\System.Net.Http.Formatting.xml
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\bin\System.Net.Http.WebRequest.xml
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\bin\System.Web.Http.xml
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\bin\System.Web.Http.WebHost.xml
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\bin\System.Web.Mvc.xml
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\bin\System.Web.Razor.xml
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\bin\System.Web.WebPages.xml
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\bin\System.Web.WebPages.Razor.xml
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\obj\Debug\EBinder.csprojResolveAssemblyReference.cache
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\obj\Debug\EBinder.App_GlobalResources.Resource.resources
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\obj\Debug\EBinder.App_GlobalResources.Resource.es.resources
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\obj\Debug\EBinder.csproj.GenerateResource.Cache
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\obj\Debug\es\EBinder.resources.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\obj\Debug\EBinder.dll
+C:\Users\Richard\Desktop\Coyote Development\Clients\Schaeffler\Project Files\Applications\Current Ver\EBinder-Admin\EBinder\obj\Debug\EBinder.pdb

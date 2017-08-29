@@ -1,0 +1,237 @@
+﻿/***********************/
+/****** Autocomplete *********/
+/***********************/
+
+.ui-autocomplete {
+    background: #ffffff;
+    border-radius: 0px;
+    max-height: 400px;
+    max-width: 300px;
+    border-color: black;
+    border-width: 1px;
+    font-size: 10px;
+    overflow-y:auto;
+    overflow-x: hidden;
+}
+.ui-autocomplete.ui-widget {
+  font-family: Verdana,Arial,sans-serif;
+  font-size: 11px;
+}
+
+.ui-autocomplete.source:hover {
+    background: red;
+}
+
+.ui-menu .ui-menu-item a{
+    background:#ffffff;
+    height:10px;
+    font-size:10px;
+    padding: 3px;
+}
+
+/***********************/
+/****** Header *********/
+/***********************/
+
+header
+{
+    text-align: center;
+    background-color: #efeeef;
+    color: #333;
+    max-width: 1250px;
+    margin: auto;
+    padding: 0;
+}
+.filterInfo
+{
+text-align: left;
+padding-bottom: 10px;
+margin-top: 10px;
+display: inline-block;
+font-family:Arial;
+font-size: 15px;
+font-weight: bold;
+}
+
+.LangSelector{
+    padding:5px;
+}
+
+.LangSelector select{
+    max-width:80px;
+}
+
+.HelpButton{
+    height:50px;
+    float:right;
+    padding: 5px;
+}
+
+.HelpButton img {
+    height:50px;
+}
+
+
+/*************************/
+/********Index************/
+/*************************/
+
+.index-table {
+    margin: 0 auto;
+}
+
+.index-table-cell{
+    padding: 20px;
+    text-align:center;
+}
+
+.index-table-image{
+    
+}
+
+.index-table-label{
+    
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.index-table a{
+    color: black;
+    text-decoration: none;
+}
+
+.index-table a:hover{
+    color: blue;
+    text-decoration: none;
+}
+
+/*********************/
+/*******Tables*******/
+/*********************/
+
+.table-header{
+    text-align:center;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 5px 10px 5px 10px;
+    
+}
+
+.table-cell{
+    padding: 2px 15px 2px 15px;
+}
+
+.RefFilter{
+    padding: 3px;
+}
+/* main layout
+----------------------------------------------------------*/
+.content-wrapper {
+    margin: 0 auto;
+    max-width: 960px;
+}
+
+#body {
+    background-color: #efeeef;
+    clear: both;
+    padding: 0px 35px 35px 35px;
+}
+
+footer {
+    clear: both;
+    background-color: #e2e2e2;
+    font-size: .8em;
+    height: 100px;
+}
+
+/* Styles for basic forms
+-----------------------------------------------------------*/
+.text-danger
+{
+    color: Red;
+    font-weight: bold;
+    font-size: 16px;
+    text-align:center;
+    padding: 10px;
+}
+
+html {
+    background-color: #e2e2e2;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #e2e2e2;
+    color: #333;
+    max-width: 1089px;
+    margin: auto;
+}
+
+fieldset{
+    padding: 15px;
+    margin: 15px;
+}
+legend {
+font-size: 1.2em;
+font-weight: bold;
+}
+
+textarea {
+min-height: 75px;
+}
+
+.text-box {
+    min-width: 300px;
+}
+
+select{
+    width: 200px;
+}
+
+.editor-label {
+float: left;
+width: 180px;
+padding-top: 5px;
+margin-left: 10px;
+
+}
+
+.editor-field {
+  padding: 5px;
+}
+
+.display-label {
+font-weight: bold;
+float:left;
+width:200px;
+padding-top: 5px;
+}
+
+.display-field {
+    padding: 5px;
+}
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+color: #f00;
+}
+
+.field-validation-valid {
+display: none;
+}
+
+.input-validation-error {
+border: 1px solid #f00;
+background-color: #fee;
+}
+
+.validation-summary-errors {
+font-weight: bold;
+color: #f00;
+}
+
+.validation-summary-valid {
+display: none;
+}

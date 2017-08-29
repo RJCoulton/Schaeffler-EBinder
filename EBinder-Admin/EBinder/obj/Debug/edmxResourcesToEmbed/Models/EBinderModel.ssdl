@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EbinderModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Cell">
+    <Key>
+      <PropertyRef Name="CellID" />
+    </Key>
+    <Property Name="CellID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Workcenter" Type="nvarchar" MaxLength="15" />
+    <Property Name="DepartmentID" Type="int" Nullable="false" />
+    <Property Name="Part_PartID" Type="int" />
+  </EntityType>
+  <EntityType Name="CellReferences">
+    <Key>
+      <PropertyRef Name="ReferenceId" />
+      <PropertyRef Name="CellId" />
+    </Key>
+    <Property Name="ReferenceId" Type="int" Nullable="false" />
+    <Property Name="CellId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="DepartmentID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="PlantID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DepartmentReferences">
+    <Key>
+      <PropertyRef Name="ReferenceId" />
+      <PropertyRef Name="DepartmentId" />
+    </Key>
+    <Property Name="ReferenceId" Type="int" Nullable="false" />
+    <Property Name="DepartmentId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HomePageReferences">
+    <Key>
+      <PropertyRef Name="PlantId" />
+      <PropertyRef Name="ReferenceTypeId" />
+    </Key>
+    <Property Name="PlantId" Type="int" Nullable="false" />
+    <Property Name="ReferenceTypeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Part">
+    <Key>
+      <PropertyRef Name="PartID" />
+    </Key>
+    <Property Name="PartID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PartDesc" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="PartReferences">
+    <Key>
+      <PropertyRef Name="PartId" />
+      <PropertyRef Name="ReferenceId" />
+    </Key>
+    <Property Name="PartId" Type="int" Nullable="false" />
+    <Property Name="ReferenceId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Plant">
+    <Key>
+      <PropertyRef Name="PlantID" />
+    </Key>
+    <Property Name="PlantID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="RegionID" Type="int" Nullable="false" />
+    <Property Name="ContactEmail" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Language" Type="nvarchar(max)" />
+    <Property Name="CompanyNumbers" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="PlantReferences">
+    <Key>
+      <PropertyRef Name="ReferenceId" />
+      <PropertyRef Name="PlantId" />
+    </Key>
+    <Property Name="ReferenceId" Type="int" Nullable="false" />
+    <Property Name="PlantId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Reference">
+    <Key>
+      <PropertyRef Name="ReferenceID" />
+    </Key>
+    <Property Name="ReferenceID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Number" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="URL" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FlagDate" Type="datetime" Nullable="false" />
+    <Property Name="ReferenceTypeID" Type="int" Nullable="false" />
+    <Property Name="DefaultPlantID" Type="int" />
+  </EntityType>
+  <EntityType Name="ReferenceCategory">
+    <Key>
+      <PropertyRef Name="ReferenceCategoryID" />
+    </Key>
+    <Property Name="ReferenceCategoryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName_en" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="CategoryName_es" Type="nvarchar" MaxLength="40" />
+  </EntityType>
+  <EntityType Name="ReferenceType">
+    <Key>
+      <PropertyRef Name="ReferenceTypeID" />
+    </Key>
+    <Property Name="ReferenceTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TypeName_en" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="TypeName_es" Type="nvarchar" MaxLength="25" />
+    <Property Name="ReferenceCategoryID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ReferenceTypePlant">
+    <Key>
+      <PropertyRef Name="ReferenceType_ReferenceTypeID" />
+      <PropertyRef Name="Plant_PlantID" />
+    </Key>
+    <Property Name="ReferenceType_ReferenceTypeID" Type="int" Nullable="false" />
+    <Property Name="Plant_PlantID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Region">
+    <Key>
+      <PropertyRef Name="RegionID" />
+    </Key>
+    <Property Name="RegionID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="25" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RegionReferences">
+    <Key>
+      <PropertyRef Name="RegionId" />
+      <PropertyRef Name="ReferenceId" />
+    </Key>
+    <Property Name="RegionId" Type="int" Nullable="false" />
+    <Property Name="ReferenceId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="Username" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="CellID" Type="int" Nullable="false" />
+    <Property Name="UserTypeID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserType">
+    <Key>
+      <PropertyRef Name="UserTypeID" />
+    </Key>
+    <Property Name="UserTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityContainer Name="EbinderModelStoreContainer">
+    <EntitySet Name="Cell" EntityType="Self.Cell" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CellReferences" EntityType="Self.CellReferences" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DepartmentReferences" EntityType="Self.DepartmentReferences" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HomePageReferences" EntityType="Self.HomePageReferences" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Part" EntityType="Self.Part" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PartReferences" EntityType="Self.PartReferences" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Plant" EntityType="Self.Plant" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlantReferences" EntityType="Self.PlantReferences" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Reference" EntityType="Self.Reference" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReferenceCategory" EntityType="Self.ReferenceCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReferenceType" EntityType="Self.ReferenceType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReferenceTypePlant" EntityType="Self.ReferenceTypePlant" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Region" EntityType="Self.Region" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RegionReferences" EntityType="Self.RegionReferences" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserType" EntityType="Self.UserType" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,44 @@
+﻿@model EBinder.Models.ReferenceCategory
+@using EBinder.App_GlobalResources
+
+@{
+    ViewBag.Title = Resource.Create;
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>@Resource.ReferenceCategory</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CategoryName_en) - en
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CategoryName_en)
+            @Html.ValidationMessageFor(model => model.CategoryName_en)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CategoryName_es) - es
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CategoryName_es)
+            @Html.ValidationMessageFor(model => model.CategoryName_es)
+        </div>
+
+        <p>
+            <input type="submit" value="@Resource.Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink(Resource.BackToCategories, "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

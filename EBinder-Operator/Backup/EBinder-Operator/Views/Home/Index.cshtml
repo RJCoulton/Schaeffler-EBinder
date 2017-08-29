@@ -1,0 +1,51 @@
+﻿@using EBinder_Operator.Models;
+@{
+    ViewBag.Title = "eBinder+";
+}
+
+<ul class=tabs>
+@{
+    string tab = "tab";
+    string tabContent = "tab-content";
+    string selected = "checked";
+    int count = 1;
+    int iconCount = 1;
+
+    foreach (Category Category in ViewData["Categories"] as List<Category>)
+    {
+        <li>
+        <input type="radio" @selected name="tabs" id="@tab@count">
+        <label for="@tab@count">@Category.Name</label>
+        <div id="@tabContent@count" class= "@tabContent">
+                <div class="iconLayout">
+                    @foreach (var icon in Category.List)
+                    {
+                        if (Category.List.Count > 4 && iconCount > Category.List.Count / 2)
+                        {
+                            @:</div>
+                            @:<div class="iconLayout">
+                            iconCount = 0;
+                        }
+                        
+                        iconCount++;
+                        string iconSrc = "../../Images/Icons/" + Session["Language"] + "/" + icon.TypeName + ".png";
+                        string tooltipSrc = "../../Images/Tooltips/" + icon.TypeName + ".png";
+                        <a href="@Url.Action("ReferenceList", new { iconId = icon.ReferenceTypeID })">
+                            <div class = "iconContainer">
+                                <img src="@iconSrc" alt="@icon.TypeName" height="200" />
+                                <div class="iconShadow"><img src="../../Images/shadow.png" alt="Shadow"/></div>
+                                <div class="iconHighlight"></div>
+                                <div class="tooltip"><img class="landscape" src="@tooltipSrc" alt="@icon.TypeName" />Click to open</div>
+                            </div>
+                        </a>
+                        
+                    }
+                </div>
+        </div>
+    </li>
+                    iconCount = 1;
+                    count++;
+                    selected = "";
+    }
+}
+</ul>

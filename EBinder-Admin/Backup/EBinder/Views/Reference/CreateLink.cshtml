@@ -1,0 +1,40 @@
+﻿<script src="../../Scripts/jquery-1.7.1.js" type="text/javascript"></script>
+<script src="../../Scripts/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#level").change(function () {
+            $("#linkLoc").empty();
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("GetList")', // we are calling json method
+                dataType: 'json',
+                data: { id: $("#level").val() },
+
+                success: function (locs) {
+                    // states contains the JSON formatted list
+                    // of states passed from the controller
+                    $.each(locs, function (i, loc) {
+                        $("#linkLoc").append('<option value="' + loc.Value + '">' + loc.Text + '</option>');
+                    });
+                },
+                error: function (ex) {
+                    alert('Failed to retrieve filter info.' + ex);
+                }
+            });
+            return false;
+        })
+    });
+</script>
+
+@{
+    ViewBag.Title = "Create Link";
+}
+
+<h2>@ViewBag.Title</h2>
+@using(Html.BeginForm(new { id = ViewData["RefId"] }))
+{
+    @Html.DropDownList("level", ViewData["Type"] as List<SelectListItem>)
+    <br />
+    @Html.DropDownList("linkLoc", ViewData["cells"] as List<SelectListItem>)
+    <p><input type="submit" value="CreateLink" /></p>
+}

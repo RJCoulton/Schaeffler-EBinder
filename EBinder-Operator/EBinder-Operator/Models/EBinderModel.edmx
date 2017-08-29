@@ -1,0 +1,837 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="EBinderModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'EbinderDB.dbo.Cell' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Cell">
+          <Key>
+            <PropertyRef Name="CellID" />
+            
+            
+          </Key>
+          <Property Name="CellID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="Workcenter" Type="nvarchar" MaxLength="15" />
+          <Property Name="DepartmentID" Type="int" Nullable="false" />
+          <Property Name="Part_PartID" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'EbinderDB.dbo.CellReferences' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="CellReferences">
+          <Key>
+            <PropertyRef Name="ReferenceId" />
+            <PropertyRef Name="CellId" />
+          </Key>
+          <Property Name="ReferenceId" Type="int" Nullable="false" />
+          <Property Name="CellId" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'EbinderDB.dbo.Department' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="DepartmentID" />
+            
+            
+          </Key>
+          <Property Name="DepartmentID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="PlantID" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'EbinderDB.dbo.DepartmentReferences' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="DepartmentReferences">
+          <Key>
+            <PropertyRef Name="ReferenceId" />
+            <PropertyRef Name="DepartmentId" />
+          </Key>
+          <Property Name="ReferenceId" Type="int" Nullable="false" />
+          <Property Name="DepartmentId" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'EbinderDB.dbo.HomePageReferences' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="HomePageReferences">
+          <Key>
+            <PropertyRef Name="PlantId" />
+            <PropertyRef Name="ReferenceTypeId" />
+          </Key>
+          <Property Name="PlantId" Type="int" Nullable="false" />
+          <Property Name="ReferenceTypeId" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'EbinderDB.dbo.Part' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Part">
+          <Key>
+            <PropertyRef Name="PartID" />
+          </Key>
+          <Property Name="PartID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PartDesc" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'EbinderDB.dbo.PartReferences' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="PartReferences">
+          <Key>
+            <PropertyRef Name="PartId" />
+            <PropertyRef Name="ReferenceId" />
+          </Key>
+          <Property Name="PartId" Type="int" Nullable="false" />
+          <Property Name="ReferenceId" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'EbinderDB.dbo.Plant' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Plant">
+          <Key>
+            <PropertyRef Name="PlantID" />
+            
+            
+            
+          </Key>
+          <Property Name="PlantID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="RegionID" Type="int" Nullable="false" />
+          <Property Name="ContactEmail" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Language" Type="nvarchar(max)" />
+          <Property Name="CompanyNumbers" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'EbinderDB.dbo.PlantReferences' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="PlantReferences">
+          <Key>
+            <PropertyRef Name="ReferenceId" />
+            <PropertyRef Name="PlantId" />
+          </Key>
+          <Property Name="ReferenceId" Type="int" Nullable="false" />
+          <Property Name="PlantId" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'EbinderDB.dbo.Reference' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Reference">
+          <Key>
+            <PropertyRef Name="ReferenceID" />
+            
+            
+            
+            
+            
+          </Key>
+          <Property Name="ReferenceID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="Number" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="URL" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FlagDate" Type="datetime" Nullable="false" />
+          <Property Name="ReferenceTypeID" Type="int" Nullable="false" />
+          <Property Name="DefaultPlantID" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'EbinderDB.dbo.ReferenceCategory' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ReferenceCategory">
+          <Key>
+            <PropertyRef Name="ReferenceCategoryID" />
+            
+          </Key>
+          <Property Name="ReferenceCategoryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName_en" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="CategoryName_es" Type="nvarchar" MaxLength="40" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'EbinderDB.dbo.ReferenceType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ReferenceType">
+          <Key>
+            <PropertyRef Name="ReferenceTypeID" />
+            
+            
+          </Key>
+          <Property Name="ReferenceTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TypeName_en" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="TypeName_es" Type="nvarchar" MaxLength="25" />
+          <Property Name="ReferenceCategoryID" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'EbinderDB.dbo.ReferenceTypePlant' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ReferenceTypePlant">
+          <Key>
+            <PropertyRef Name="ReferenceType_ReferenceTypeID" />
+            <PropertyRef Name="Plant_PlantID" />
+          </Key>
+          <Property Name="ReferenceType_ReferenceTypeID" Type="int" Nullable="false" />
+          <Property Name="Plant_PlantID" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'EbinderDB.dbo.Region' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Region">
+          <Key>
+            <PropertyRef Name="RegionID" />
+            
+          </Key>
+          <Property Name="RegionID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'EbinderDB.dbo.RegionReferences' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="RegionReferences">
+          <Key>
+            <PropertyRef Name="RegionId" />
+            <PropertyRef Name="ReferenceId" />
+          </Key>
+          <Property Name="RegionId" Type="int" Nullable="false" />
+          <Property Name="ReferenceId" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'EbinderDB.dbo.User' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Username" />
+            
+            
+          </Key>
+          <Property Name="Username" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="CellID" Type="int" Nullable="false" />
+          <Property Name="UserTypeID" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'EbinderDB.dbo.UserType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="UserType">
+          <Key>
+            <PropertyRef Name="UserTypeID" />
+          </Key>
+          <Property Name="UserTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityContainer Name="EBinderModelStoreContainer">
+          <EntitySet Name="Cell" EntityType="Self.Cell" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[Cell].[CellID] AS [CellID], 
+[Cell].[Name] AS [Name], 
+[Cell].[Workcenter] AS [Workcenter], 
+[Cell].[DepartmentID] AS [DepartmentID], 
+[Cell].[Part_PartID] AS [Part_PartID]
+FROM [dbo].[Cell] AS [Cell]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="CellReferences" EntityType="Self.CellReferences" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[CellReferences].[ReferenceId] AS [ReferenceId], 
+[CellReferences].[CellId] AS [CellId]
+FROM [dbo].[CellReferences] AS [CellReferences]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Department" EntityType="Self.Department" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[Department].[DepartmentID] AS [DepartmentID], 
+[Department].[Name] AS [Name], 
+[Department].[PlantID] AS [PlantID]
+FROM [dbo].[Department] AS [Department]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="DepartmentReferences" EntityType="Self.DepartmentReferences" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[DepartmentReferences].[ReferenceId] AS [ReferenceId], 
+[DepartmentReferences].[DepartmentId] AS [DepartmentId]
+FROM [dbo].[DepartmentReferences] AS [DepartmentReferences]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="HomePageReferences" EntityType="Self.HomePageReferences" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[HomePageReferences].[PlantId] AS [PlantId], 
+[HomePageReferences].[ReferenceTypeId] AS [ReferenceTypeId]
+FROM [dbo].[HomePageReferences] AS [HomePageReferences]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Part" EntityType="Self.Part" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[Part].[PartID] AS [PartID], 
+[Part].[PartDesc] AS [PartDesc]
+FROM [dbo].[Part] AS [Part]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PartReferences" EntityType="Self.PartReferences" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[PartReferences].[PartId] AS [PartId], 
+[PartReferences].[ReferenceId] AS [ReferenceId]
+FROM [dbo].[PartReferences] AS [PartReferences]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Plant" EntityType="Self.Plant" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[Plant].[PlantID] AS [PlantID], 
+[Plant].[Name] AS [Name], 
+[Plant].[RegionID] AS [RegionID], 
+[Plant].[ContactEmail] AS [ContactEmail], 
+[Plant].[Language] AS [Language], 
+[Plant].[CompanyNumbers] AS [CompanyNumbers]
+FROM [dbo].[Plant] AS [Plant]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PlantReferences" EntityType="Self.PlantReferences" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[PlantReferences].[ReferenceId] AS [ReferenceId], 
+[PlantReferences].[PlantId] AS [PlantId]
+FROM [dbo].[PlantReferences] AS [PlantReferences]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Reference" EntityType="Self.Reference" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[Reference].[ReferenceID] AS [ReferenceID], 
+[Reference].[Title] AS [Title], 
+[Reference].[Number] AS [Number], 
+[Reference].[URL] AS [URL], 
+[Reference].[FlagDate] AS [FlagDate], 
+[Reference].[ReferenceTypeID] AS [ReferenceTypeID], 
+[Reference].[DefaultPlantID] AS [DefaultPlantID]
+FROM [dbo].[Reference] AS [Reference]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ReferenceCategory" EntityType="Self.ReferenceCategory" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[ReferenceCategory].[ReferenceCategoryID] AS [ReferenceCategoryID], 
+[ReferenceCategory].[CategoryName_en] AS [CategoryName_en], 
+[ReferenceCategory].[CategoryName_es] AS [CategoryName_es]
+FROM [dbo].[ReferenceCategory] AS [ReferenceCategory]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ReferenceType" EntityType="Self.ReferenceType" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[ReferenceType].[ReferenceTypeID] AS [ReferenceTypeID], 
+[ReferenceType].[TypeName_en] AS [TypeName_en], 
+[ReferenceType].[TypeName_es] AS [TypeName_es], 
+[ReferenceType].[ReferenceCategoryID] AS [ReferenceCategoryID]
+FROM [dbo].[ReferenceType] AS [ReferenceType]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ReferenceTypePlant" EntityType="Self.ReferenceTypePlant" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[ReferenceTypePlant].[ReferenceType_ReferenceTypeID] AS [ReferenceType_ReferenceTypeID], 
+[ReferenceTypePlant].[Plant_PlantID] AS [Plant_PlantID]
+FROM [dbo].[ReferenceTypePlant] AS [ReferenceTypePlant]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Region" EntityType="Self.Region" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[Region].[RegionID] AS [RegionID], 
+[Region].[Name] AS [Name]
+FROM [dbo].[Region] AS [Region]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="RegionReferences" EntityType="Self.RegionReferences" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[RegionReferences].[RegionId] AS [RegionId], 
+[RegionReferences].[ReferenceId] AS [ReferenceId]
+FROM [dbo].[RegionReferences] AS [RegionReferences]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="User" EntityType="Self.User" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[User].[Username] AS [Username], 
+[User].[CellID] AS [CellID], 
+[User].[UserTypeID] AS [UserTypeID]
+FROM [dbo].[User] AS [User]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="UserType" EntityType="Self.UserType" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[UserType].[UserTypeID] AS [UserTypeID], 
+[UserType].[Name] AS [Name]
+FROM [dbo].[UserType] AS [UserType]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EBinderModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityType Name="Cell">
+          <Key>
+            <PropertyRef Name="CellID" />
+          </Key>
+          <Property Name="CellID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Workcenter" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="DepartmentID" Type="Int32" Nullable="false" />
+          <Property Name="Part_PartID" Type="Int32" />
+          <NavigationProperty Name="Department" Relationship="Self.FK_dbo_Cell_dbo_Department_DepartmentID" FromRole="Cell" ToRole="Department" />
+          <NavigationProperty Name="Part" Relationship="Self.FK_dbo_Cell_dbo_Part_Part_PartID" FromRole="Cell" ToRole="Part" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_dbo_User_dbo_Cell_CellID" FromRole="Cell" ToRole="User" />
+          <NavigationProperty Name="References" Relationship="Self.CellReferences" FromRole="Cell" ToRole="Reference" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="DepartmentID" />
+          </Key>
+          <Property Name="DepartmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PlantID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Cells" Relationship="Self.FK_dbo_Cell_dbo_Department_DepartmentID" FromRole="Department" ToRole="Cell" />
+          <NavigationProperty Name="Plant" Relationship="Self.FK_dbo_Department_dbo_Plant_PlantID" FromRole="Department" ToRole="Plant" />
+          <NavigationProperty Name="References" Relationship="Self.DepartmentReferences" FromRole="Department" ToRole="Reference" />
+        </EntityType>
+        <EntityType Name="Part">
+          <Key>
+            <PropertyRef Name="PartID" />
+          </Key>
+          <Property Name="PartID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PartDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Cells" Relationship="Self.FK_dbo_Cell_dbo_Part_Part_PartID" FromRole="Part" ToRole="Cell" />
+          <NavigationProperty Name="References" Relationship="Self.PartReferences" FromRole="Part" ToRole="Reference" />
+        </EntityType>
+        <EntityType Name="Plant">
+          <Key>
+            <PropertyRef Name="PlantID" />
+          </Key>
+          <Property Name="PlantID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RegionID" Type="Int32" Nullable="false" />
+          <Property Name="ContactEmail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Language" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyNumbers" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Departments" Relationship="Self.FK_dbo_Department_dbo_Plant_PlantID" FromRole="Plant" ToRole="Department" />
+          <NavigationProperty Name="Region" Relationship="Self.FK_dbo_Plant_dbo_Region_RegionID" FromRole="Plant" ToRole="Region" />
+          <NavigationProperty Name="ReferenceTypes" Relationship="Self.HomePageReferences" FromRole="Plant" ToRole="ReferenceType" />
+          <NavigationProperty Name="References" Relationship="Self.PlantReferences" FromRole="Plant" ToRole="Reference" />
+          <NavigationProperty Name="HomePageReferences" Relationship="Self.ReferenceTypePlant" FromRole="Plant" ToRole="ReferenceType" />
+        </EntityType>
+        <EntityType Name="Reference">
+          <Key>
+            <PropertyRef Name="ReferenceID" />
+          </Key>
+          <Property Name="ReferenceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="URL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FlagDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ReferenceTypeID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ReferenceType" Relationship="Self.FK_dbo_Reference_dbo_ReferenceType_ReferenceTypeID" FromRole="Reference" ToRole="ReferenceType" />
+          <NavigationProperty Name="Cells" Relationship="Self.CellReferences" FromRole="Reference" ToRole="Cell" />
+          <NavigationProperty Name="Departments" Relationship="Self.DepartmentReferences" FromRole="Reference" ToRole="Department" />
+          <NavigationProperty Name="Parts" Relationship="Self.PartReferences" FromRole="Reference" ToRole="Part" />
+          <NavigationProperty Name="Plants" Relationship="Self.PlantReferences" FromRole="Reference" ToRole="Plant" />
+          <NavigationProperty Name="Regions" Relationship="Self.RegionReferences" FromRole="Reference" ToRole="Region" />
+          <Property Name="DefaultPlantID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ReferenceCategory">
+          <Key>
+            <PropertyRef Name="ReferenceCategoryID" />
+          </Key>
+          <Property Name="ReferenceCategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName_en" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CategoryName_es" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ReferenceTypes" Relationship="Self.FK_dbo_ReferenceType_dbo_ReferenceCategory_ReferenceCategoryID" FromRole="ReferenceCategory" ToRole="ReferenceType" />
+        </EntityType>
+        <EntityType Name="ReferenceType">
+          <Key>
+            <PropertyRef Name="ReferenceTypeID" />
+          </Key>
+          <Property Name="ReferenceTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeName_en" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TypeName_es" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="ReferenceCategoryID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="References" Relationship="Self.FK_dbo_Reference_dbo_ReferenceType_ReferenceTypeID" FromRole="ReferenceType" ToRole="Reference" />
+          <NavigationProperty Name="ReferenceCategory" Relationship="Self.FK_dbo_ReferenceType_dbo_ReferenceCategory_ReferenceCategoryID" FromRole="ReferenceType" ToRole="ReferenceCategory" />
+          <NavigationProperty Name="Plants" Relationship="Self.HomePageReferences" FromRole="ReferenceType" ToRole="Plant" />
+          <NavigationProperty Name="HomePagePlants" Relationship="Self.ReferenceTypePlant" FromRole="ReferenceType" ToRole="Plant" />
+        </EntityType>
+        <EntityType Name="Region">
+          <Key>
+            <PropertyRef Name="RegionID" />
+          </Key>
+          <Property Name="RegionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Plants" Relationship="Self.FK_dbo_Plant_dbo_Region_RegionID" FromRole="Region" ToRole="Plant" />
+          <NavigationProperty Name="References" Relationship="Self.RegionReferences" FromRole="Region" ToRole="Reference" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="Username" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CellID" Type="Int32" Nullable="false" />
+          <Property Name="UserTypeID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Cell" Relationship="Self.FK_dbo_User_dbo_Cell_CellID" FromRole="User" ToRole="Cell" />
+          <NavigationProperty Name="UserType" Relationship="Self.FK_dbo_User_dbo_UserType_UserTypeID" FromRole="User" ToRole="UserType" />
+        </EntityType>
+        <EntityType Name="UserType">
+          <Key>
+            <PropertyRef Name="UserTypeID" />
+          </Key>
+          <Property Name="UserTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_dbo_User_dbo_UserType_UserTypeID" FromRole="UserType" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_dbo_Cell_dbo_Department_DepartmentID">
+          <End Role="Department" Type="Self.Department" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Cell" Type="Self.Cell" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DepartmentID" />
+            </Principal>
+            <Dependent Role="Cell">
+              <PropertyRef Name="DepartmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Cell_dbo_Part_Part_PartID">
+          <End Role="Part" Type="Self.Part" Multiplicity="0..1" />
+          <End Role="Cell" Type="Self.Cell" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Part">
+              <PropertyRef Name="PartID" />
+            </Principal>
+            <Dependent Role="Cell">
+              <PropertyRef Name="Part_PartID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_User_dbo_Cell_CellID">
+          <End Role="Cell" Type="Self.Cell" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cell">
+              <PropertyRef Name="CellID" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="CellID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Department_dbo_Plant_PlantID">
+          <End Role="Plant" Type="Self.Plant" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Department" Type="Self.Department" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Plant">
+              <PropertyRef Name="PlantID" />
+            </Principal>
+            <Dependent Role="Department">
+              <PropertyRef Name="PlantID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Plant_dbo_Region_RegionID">
+          <End Role="Region" Type="Self.Region" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Plant" Type="Self.Plant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Region">
+              <PropertyRef Name="RegionID" />
+            </Principal>
+            <Dependent Role="Plant">
+              <PropertyRef Name="RegionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Reference_dbo_ReferenceType_ReferenceTypeID">
+          <End Role="ReferenceType" Type="Self.ReferenceType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Reference" Type="Self.Reference" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ReferenceType">
+              <PropertyRef Name="ReferenceTypeID" />
+            </Principal>
+            <Dependent Role="Reference">
+              <PropertyRef Name="ReferenceTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ReferenceType_dbo_ReferenceCategory_ReferenceCategoryID">
+          <End Role="ReferenceCategory" Type="Self.ReferenceCategory" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ReferenceType" Type="Self.ReferenceType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ReferenceCategory">
+              <PropertyRef Name="ReferenceCategoryID" />
+            </Principal>
+            <Dependent Role="ReferenceType">
+              <PropertyRef Name="ReferenceCategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_User_dbo_UserType_UserTypeID">
+          <End Role="UserType" Type="Self.UserType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserType">
+              <PropertyRef Name="UserTypeID" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="UserTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CellReferences">
+          <End Role="Cell" Type="Self.Cell" Multiplicity="*" />
+          <End Role="Reference" Type="Self.Reference" Multiplicity="*" />
+        </Association>
+        <Association Name="DepartmentReferences">
+          <End Role="Department" Type="Self.Department" Multiplicity="*" />
+          <End Role="Reference" Type="Self.Reference" Multiplicity="*" />
+        </Association>
+        <Association Name="HomePageReferences">
+          <End Role="Plant" Type="Self.Plant" Multiplicity="*" />
+          <End Role="ReferenceType" Type="Self.ReferenceType" Multiplicity="*" />
+        </Association>
+        <Association Name="PartReferences">
+          <End Role="Part" Type="Self.Part" Multiplicity="*" />
+          <End Role="Reference" Type="Self.Reference" Multiplicity="*" />
+        </Association>
+        <Association Name="PlantReferences">
+          <End Role="Plant" Type="Self.Plant" Multiplicity="*" />
+          <End Role="Reference" Type="Self.Reference" Multiplicity="*" />
+        </Association>
+        <Association Name="ReferenceTypePlant">
+          <End Role="Plant" Type="Self.Plant" Multiplicity="*" />
+          <End Role="ReferenceType" Type="Self.ReferenceType" Multiplicity="*" />
+        </Association>
+        <Association Name="RegionReferences">
+          <End Role="Reference" Type="Self.Reference" Multiplicity="*" />
+          <End Role="Region" Type="Self.Region" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="EBinderContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cells" EntityType="Self.Cell" />
+          <EntitySet Name="Departments" EntityType="Self.Department" />
+          <EntitySet Name="Parts" EntityType="Self.Part" />
+          <EntitySet Name="Plants" EntityType="Self.Plant" />
+          <EntitySet Name="References" EntityType="Self.Reference" />
+          <EntitySet Name="ReferenceCategories" EntityType="Self.ReferenceCategory" />
+          <EntitySet Name="ReferenceTypes" EntityType="Self.ReferenceType" />
+          <EntitySet Name="Regions" EntityType="Self.Region" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="UserTypes" EntityType="Self.UserType" />
+          <AssociationSet Name="FK_dbo_Cell_dbo_Department_DepartmentID" Association="Self.FK_dbo_Cell_dbo_Department_DepartmentID">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="Cell" EntitySet="Cells" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Cell_dbo_Part_Part_PartID" Association="Self.FK_dbo_Cell_dbo_Part_Part_PartID">
+            <End Role="Part" EntitySet="Parts" />
+            <End Role="Cell" EntitySet="Cells" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_User_dbo_Cell_CellID" Association="Self.FK_dbo_User_dbo_Cell_CellID">
+            <End Role="Cell" EntitySet="Cells" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Department_dbo_Plant_PlantID" Association="Self.FK_dbo_Department_dbo_Plant_PlantID">
+            <End Role="Plant" EntitySet="Plants" />
+            <End Role="Department" EntitySet="Departments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Plant_dbo_Region_RegionID" Association="Self.FK_dbo_Plant_dbo_Region_RegionID">
+            <End Role="Region" EntitySet="Regions" />
+            <End Role="Plant" EntitySet="Plants" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Reference_dbo_ReferenceType_ReferenceTypeID" Association="Self.FK_dbo_Reference_dbo_ReferenceType_ReferenceTypeID">
+            <End Role="ReferenceType" EntitySet="ReferenceTypes" />
+            <End Role="Reference" EntitySet="References" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ReferenceType_dbo_ReferenceCategory_ReferenceCategoryID" Association="Self.FK_dbo_ReferenceType_dbo_ReferenceCategory_ReferenceCategoryID">
+            <End Role="ReferenceCategory" EntitySet="ReferenceCategories" />
+            <End Role="ReferenceType" EntitySet="ReferenceTypes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_User_dbo_UserType_UserTypeID" Association="Self.FK_dbo_User_dbo_UserType_UserTypeID">
+            <End Role="UserType" EntitySet="UserTypes" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="CellReferences" Association="Self.CellReferences">
+            <End Role="Cell" EntitySet="Cells" />
+            <End Role="Reference" EntitySet="References" />
+          </AssociationSet>
+          <AssociationSet Name="DepartmentReferences" Association="Self.DepartmentReferences">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="Reference" EntitySet="References" />
+          </AssociationSet>
+          <AssociationSet Name="HomePageReferences" Association="Self.HomePageReferences">
+            <End Role="Plant" EntitySet="Plants" />
+            <End Role="ReferenceType" EntitySet="ReferenceTypes" />
+          </AssociationSet>
+          <AssociationSet Name="PartReferences" Association="Self.PartReferences">
+            <End Role="Part" EntitySet="Parts" />
+            <End Role="Reference" EntitySet="References" />
+          </AssociationSet>
+          <AssociationSet Name="PlantReferences" Association="Self.PlantReferences">
+            <End Role="Plant" EntitySet="Plants" />
+            <End Role="Reference" EntitySet="References" />
+          </AssociationSet>
+          <AssociationSet Name="ReferenceTypePlant" Association="Self.ReferenceTypePlant">
+            <End Role="Plant" EntitySet="Plants" />
+            <End Role="ReferenceType" EntitySet="ReferenceTypes" />
+          </AssociationSet>
+          <AssociationSet Name="RegionReferences" Association="Self.RegionReferences">
+            <End Role="Reference" EntitySet="References" />
+            <End Role="Region" EntitySet="Regions" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EBinderModelStoreContainer" CdmEntityContainer="EBinderContext">
+          <EntitySetMapping Name="Cells">
+            <EntityTypeMapping TypeName="EBinderModel.Cell">
+              <MappingFragment StoreEntitySet="Cell">
+                <ScalarProperty Name="CellID" ColumnName="CellID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Workcenter" ColumnName="Workcenter" />
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="Part_PartID" ColumnName="Part_PartID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departments">
+            <EntityTypeMapping TypeName="EBinderModel.Department">
+              <MappingFragment StoreEntitySet="Department">
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PlantID" ColumnName="PlantID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Parts">
+            <EntityTypeMapping TypeName="EBinderModel.Part">
+              <MappingFragment StoreEntitySet="Part">
+                <ScalarProperty Name="PartID" ColumnName="PartID" />
+                <ScalarProperty Name="PartDesc" ColumnName="PartDesc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Plants">
+            <EntityTypeMapping TypeName="EBinderModel.Plant">
+              <MappingFragment StoreEntitySet="Plant">
+                <ScalarProperty Name="PlantID" ColumnName="PlantID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="RegionID" ColumnName="RegionID" />
+                <ScalarProperty Name="ContactEmail" ColumnName="ContactEmail" />
+                <ScalarProperty Name="Language" ColumnName="Language" />
+                <ScalarProperty Name="CompanyNumbers" ColumnName="CompanyNumbers" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="References">
+            <EntityTypeMapping TypeName="EBinderModel.Reference">
+              <MappingFragment StoreEntitySet="Reference">
+                <ScalarProperty Name="DefaultPlantID" ColumnName="DefaultPlantID" />
+                <ScalarProperty Name="ReferenceID" ColumnName="ReferenceID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="URL" ColumnName="URL" />
+                <ScalarProperty Name="FlagDate" ColumnName="FlagDate" />
+                <ScalarProperty Name="ReferenceTypeID" ColumnName="ReferenceTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReferenceCategories">
+            <EntityTypeMapping TypeName="EBinderModel.ReferenceCategory">
+              <MappingFragment StoreEntitySet="ReferenceCategory">
+                <ScalarProperty Name="ReferenceCategoryID" ColumnName="ReferenceCategoryID" />
+                <ScalarProperty Name="CategoryName_en" ColumnName="CategoryName_en" />
+                <ScalarProperty Name="CategoryName_es" ColumnName="CategoryName_es" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReferenceTypes">
+            <EntityTypeMapping TypeName="EBinderModel.ReferenceType">
+              <MappingFragment StoreEntitySet="ReferenceType">
+                <ScalarProperty Name="ReferenceTypeID" ColumnName="ReferenceTypeID" />
+                <ScalarProperty Name="TypeName_en" ColumnName="TypeName_en" />
+                <ScalarProperty Name="TypeName_es" ColumnName="TypeName_es" />
+                <ScalarProperty Name="ReferenceCategoryID" ColumnName="ReferenceCategoryID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Regions">
+            <EntityTypeMapping TypeName="EBinderModel.Region">
+              <MappingFragment StoreEntitySet="Region">
+                <ScalarProperty Name="RegionID" ColumnName="RegionID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="EBinderModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="CellID" ColumnName="CellID" />
+                <ScalarProperty Name="UserTypeID" ColumnName="UserTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserTypes">
+            <EntityTypeMapping TypeName="EBinderModel.UserType">
+              <MappingFragment StoreEntitySet="UserType">
+                <ScalarProperty Name="UserTypeID" ColumnName="UserTypeID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="CellReferences" TypeName="EBinderModel.CellReferences" StoreEntitySet="CellReferences">
+            <EndProperty Name="Cell">
+              <ScalarProperty Name="CellID" ColumnName="CellId" />
+            </EndProperty>
+            <EndProperty Name="Reference">
+              <ScalarProperty Name="ReferenceID" ColumnName="ReferenceId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="DepartmentReferences" TypeName="EBinderModel.DepartmentReferences" StoreEntitySet="DepartmentReferences">
+            <EndProperty Name="Department">
+              <ScalarProperty Name="DepartmentID" ColumnName="DepartmentId" />
+            </EndProperty>
+            <EndProperty Name="Reference">
+              <ScalarProperty Name="ReferenceID" ColumnName="ReferenceId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="HomePageReferences" TypeName="EBinderModel.HomePageReferences" StoreEntitySet="HomePageReferences">
+            <EndProperty Name="Plant">
+              <ScalarProperty Name="PlantID" ColumnName="PlantId" />
+            </EndProperty>
+            <EndProperty Name="ReferenceType">
+              <ScalarProperty Name="ReferenceTypeID" ColumnName="ReferenceTypeId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="PartReferences" TypeName="EBinderModel.PartReferences" StoreEntitySet="PartReferences">
+            <EndProperty Name="Part">
+              <ScalarProperty Name="PartID" ColumnName="PartId" />
+            </EndProperty>
+            <EndProperty Name="Reference">
+              <ScalarProperty Name="ReferenceID" ColumnName="ReferenceId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="PlantReferences" TypeName="EBinderModel.PlantReferences" StoreEntitySet="PlantReferences">
+            <EndProperty Name="Plant">
+              <ScalarProperty Name="PlantID" ColumnName="PlantId" />
+            </EndProperty>
+            <EndProperty Name="Reference">
+              <ScalarProperty Name="ReferenceID" ColumnName="ReferenceId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="ReferenceTypePlant" TypeName="EBinderModel.ReferenceTypePlant" StoreEntitySet="ReferenceTypePlant">
+            <EndProperty Name="Plant">
+              <ScalarProperty Name="PlantID" ColumnName="Plant_PlantID" />
+            </EndProperty>
+            <EndProperty Name="ReferenceType">
+              <ScalarProperty Name="ReferenceTypeID" ColumnName="ReferenceType_ReferenceTypeID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="RegionReferences" TypeName="EBinderModel.RegionReferences" StoreEntitySet="RegionReferences">
+            <EndProperty Name="Reference">
+              <ScalarProperty Name="ReferenceID" ColumnName="ReferenceId" />
+            </EndProperty>
+            <EndProperty Name="Region">
+              <ScalarProperty Name="RegionID" ColumnName="RegionId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

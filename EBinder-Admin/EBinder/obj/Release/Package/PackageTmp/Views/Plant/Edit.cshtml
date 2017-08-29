@@ -1,0 +1,74 @@
+﻿@model EBinder.Models.Plant
+@using EBinder.App_GlobalResources
+
+@{
+    ViewBag.Title = Resource.Edit;
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>@Resource.Plant</legend>
+
+        @Html.HiddenFor(model => model.PlantID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RegionID, "Region")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("RegionID", String.Empty)
+            @Html.ValidationMessageFor(model => model.RegionID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ContactEmail)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ContactEmail)
+            @Html.ValidationMessageFor(model => model.ContactEmail)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Language)
+        </div>
+        <div class="editor-field">
+            <select name="lang" id="lang">
+                @foreach (var i in EBinder.SiteLanguages.AvailableLanguages)
+                {
+                    var curLang = Model.Language;
+                    if (curLang != null && curLang.ToString() == i.LangCultureName)
+                    {
+                        <option value="@i.LangCultureName" selected="selected">@i.LangFullName</option>
+                    }
+                    else
+                    {
+                        <option value="@i.LangCultureName">@i.LangFullName</option>
+                    }
+
+                }
+            </select>
+        </div>
+
+        <p>
+            <input type="submit" value="@Resource.Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink(Resource.BackToPlants, "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

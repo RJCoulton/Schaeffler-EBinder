@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div style="border-bottom: 1px solid black; text-align: center">
+        <img alt="Schaeffler" src="../../Content/imgs/schaeffler.png" style="float: left; margin-top:5px;"/>
+        <div class="header"> 
+            <table>
+                <tr>
+                    <td>Region:</td>
+                    <td>@Session["Region"]</td>
+                    
+                    <td>Dept:</td>
+                    <td>@Session["Department"]</td>
+                </tr>
+                <tr>
+                    <td>Plant:</td>
+                    <td>@Session["Plant"]</td>
+                    <td>Cell:</td>
+                    <td>@Session["Cell"]</td>
+                </tr>
+                <tr>
+                    <td>Part:</td>
+                    <td>@Session["Part"]</td>
+                    <td colspan="2">@using (Html.BeginForm("Filter","Home", FormMethod.Get))
+                        {
+                            <input type="submit" value="Change Filter"/>
+                        }
+                    </td>
+                </tr>
+            </table>
+            
+            
+        </div>
+        <img alt="Help" src="../../Content/imgs/help button.png"style="float: right; margin-top: 15px; padding-left: 165px" />
+    </div>
+    <p class="text-danger">@TempData["message"]</p>
+    @Html.ActionLink("Home", "Index", "Home", null, null)
+    @RenderBody()
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

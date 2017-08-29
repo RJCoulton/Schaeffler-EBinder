@@ -1,0 +1,84 @@
+﻿@model IEnumerable<EBinder_Operator.Models.Reference>
+@using EBinder_Operator.Models;
+@using EBinder_Operator.App_GlobalResources;
+
+    @{
+
+        ReferenceType icon = ViewData["RefType"] as ReferenceType;
+        ViewBag.Title = icon.TypeName_en;
+        string iconSrc = Url.Content("~/Images/Icons/en/" + icon.TypeName_en + ".png");
+    }
+    <div class="listLayout">
+        <div class="listIcon">
+            <div class="listIconContainer" style="margin: 0">
+                <img src="@iconSrc" alt="@icon.TypeName_en" class="list-icon" />
+            </div>
+            <div class="backContainer">
+                <a href="@Url.Action("Index")">
+                    <img src="~/Images/back.png" alt="Go Back" class="back-button" />
+                </a>
+            </div>
+        </div>
+        <div class="listContainer">
+            <div class="listTitle">@icon.TypeName_en</div>
+            <div class="list">
+                <div style="box-shadow: 0px 0px 10px;">
+                    <table>
+                        <tr>
+                            <td>
+                                <table class="listTable">
+                                    <tr>
+                                        <th>@Resource.Link</th>
+                                        <th class="linkNumber">@Resource.ReferenceNum</th>
+                                        <th class="linkTitle">@Resource.Title</th>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="scroll">
+                                    <table class="listTable">
+                                        @{
+                                            bool flag = true;
+                                            string color = "WhiteSmoke";
+
+                                            foreach (var item in Model)
+                                            {
+                                                string href = "";
+                                                if (Path.GetExtension(item.URL).ToLower() == ".exe")
+                                                {
+                                                    href = "javascript:LaunchApp('" + item.URL + "')";
+                                                }
+                                                else
+                                                {
+                                                    href = item.URL;
+                                                }
+
+                                                <tr style="background-color: @color">
+                                                    <td style="width: 100px; padding-top: 5px"><a href="@href" download><img src="~/Images/open.png" alt="Open" /></a></td>
+                                                    <td class="linkNumber">@item.Number</td>
+                                                    <td class="linkTitle"> @if (item.FlagDate > DateTime.Now)
+                                                    { <img src="~/Images/flagIcon.png" alt="Flag" /> } @item.Title</td>
+                                                </tr>
+                                                if (flag) { color = "White"; } else { color = "WhiteSmoke"; }
+                                                flag = !flag;
+                                            }
+                                        }
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    function LaunchApp(url) {
+
+    var ws = new ActiveXObject("WScript.Shell");
+    ws.Exec(url);
+    }
+</script>

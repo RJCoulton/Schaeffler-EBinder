@@ -1,0 +1,32 @@
+﻿@model EBinder.Models.ReferenceType
+@using EBinder.App_GlobalResources
+@{
+    ViewBag.Title = Resource.Delete;
+}
+
+<h2>@ViewBag.Title</h2>
+
+<h3>@Resource.DeleteConfirmation</h3>
+<fieldset>
+    <legend>@Resource.ReferenceType</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TypeName_en)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TypeName_en)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ReferenceCategory.CategoryName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ReferenceCategory.CategoryName)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="@Resource.Delete" /> |
+        @Html.ActionLink(Resource.BackToList, "Index")
+    </p>
+}

@@ -1,0 +1,54 @@
+﻿@model IEnumerable<EBinder.Models.User>
+@using EBinder.App_GlobalResources
+@{
+    ViewBag.Title = Resource.Users;
+}
+
+<h2>@ViewBag.Title</h2>
+<p>
+    @Html.ActionLink(Resource.ReturnToDashboard, "Index", "Home")
+</p>
+<p>
+    @Html.ActionLink(Resource.CreateNew, "Create")
+</p>
+<table>
+    <tr>
+        <th class="table-header">
+            @Html.DisplayNameFor(model => model.Username)
+        </th>
+        <th class="table-header">
+            @Html.DisplayNameFor(model => model.Cell.Department.Plant.Name)
+        </th>
+        <th class="table-header">
+            @Html.DisplayNameFor(model => model.Cell.Name)
+        </th>
+        <th class="table-header">
+            @Html.DisplayNameFor(model => model.UserType.Name)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="table-cell">
+                @Html.DisplayFor(modelItem => item.Username)
+            </td>
+            <td class="table-cell">
+                @Html.DisplayFor(modelItem => item.Cell.Department.Plant.Name)
+            </td>
+            <td class="table-cell">
+                @Html.DisplayFor(modelItem => item.Cell.Name)
+            </td>
+            <td class="table-cell">
+                @Html.DisplayFor(modelItem => item.UserType.Name)
+            </td>
+            <td class="table-cell">
+                @Html.ActionLink(Resource.Edit, "Edit", new { id = item.Username }) |
+                @Html.ActionLink(Resource.Delete, "Delete", new { id = item.Username }, new { onclick = "return confirm('"+Resource.DeleteConfirmation+"');" })
+            </td>
+        </tr>
+    }
+
+</table>
+

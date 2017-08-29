@@ -1,0 +1,75 @@
+﻿@using EBinder_Operator.Models;
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>EBinder+</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+    </head>
+    <body>
+        <header>
+        <div class="content-wrapper">
+            <img alt="Schaeffler" src="../../Images/schaeffler.png" style="float: left; margin-top:5px;"/>
+            <div class="filterInfo"> 
+                @{
+                    var region = Session["Region"] as Region;
+                    var plant = Session["Plant"] as Plant;
+                    var dept = Session["Department"] as Department;
+                    var cell = Session["Cell"] as Cell;
+                    var part = Session["Part"] as Part;
+                    if (part == null)
+                    {
+                        part = new Part();
+                        part.PartNumber = "All";
+                    }
+                }
+                <table>
+                    <tr>
+                        <td style="font-weight: normal">Region:</td>
+                        <td>@region.Name</td>
+                    
+                        <td style="font-weight: normal">Dept:</td>
+                        <td>@dept.Name</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: normal">Plant:</td>
+                        <td>@plant.Name</td>
+                        <td style="font-weight: normal">Cell:</td>
+                        <td>@cell.Name</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: normal">Part:</td>
+                        <td>@part.PartNumber</td>
+                        <td colspan="2">@using (Html.BeginForm("Filter","Home", FormMethod.Get))
+                            {
+                                <input type="submit" value="Change Filter"/>
+                            }
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <img alt="Help" src="../../Images/help button.png" style="float: right; margin-top: 15px; padding-left: 200px" />
+        </div>
+        </header>
+        <div id="body">
+            @RenderSection("featured", required: false)
+            <section class="body">
+                <div class="text-danger">@TempData["message"]</div>
+                @RenderBody()                
+            </section>
+        </div>
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; @DateTime.Now.Year - Schaeffler NA - Richard Coulton</p>
+                </div>
+            </div>
+        </footer>
+
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

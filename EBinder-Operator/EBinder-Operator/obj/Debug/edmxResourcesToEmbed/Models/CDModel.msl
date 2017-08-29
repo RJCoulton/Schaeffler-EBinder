@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CDModelStoreContainer" CdmEntityContainer="CDContext">
+    <EntitySetMapping Name="ADInfoes">
+      <EntityTypeMapping TypeName="CDModel.ADInfo">
+        <MappingFragment StoreEntitySet="ADInfo">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SAPCostCenters">
+      <EntityTypeMapping TypeName="CDModel.SAPCostCenter">
+        <MappingFragment StoreEntitySet="SAPCostCenters">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="Hierarchy" ColumnName="Hierarchy" />
+          <ScalarProperty Name="Responsible" ColumnName="Responsible" />
+          <ScalarProperty Name="ResponsibleAlt" ColumnName="ResponsibleAlt" />
+          <ScalarProperty Name="ValidOn" ColumnName="ValidOn" />
+          <ScalarProperty Name="ExpireOn" ColumnName="ExpireOn" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="ExpireOnTest" ColumnName="ExpireOnTest" />
+          <ScalarProperty Name="Erase" ColumnName="Erase" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SAPEmployees">
+      <EntityTypeMapping TypeName="CDModel.SAPEmployee">
+        <MappingFragment StoreEntitySet="SAPEmployees">
+          <ScalarProperty Name="ClockNumber" ColumnName="ClockNumber" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="CostCenter" ColumnName="CostCenter" />
+          <ScalarProperty Name="OrgUnitNumber" ColumnName="OrgUnitNumber" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="UpdateCheck" ColumnName="UpdateCheck" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SAPParts">
+      <EntityTypeMapping TypeName="CDModel.SAPPart">
+        <MappingFragment StoreEntitySet="SAPParts">
+          <ScalarProperty Name="SAPMaterialNum" ColumnName="SAPMaterialNum" />
+          <ScalarProperty Name="CompanyNumber" ColumnName="CompanyNumber" />
+          <ScalarProperty Name="PartDesc" ColumnName="PartDesc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

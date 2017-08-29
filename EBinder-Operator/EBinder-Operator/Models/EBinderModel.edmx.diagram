@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b01b955d6f1b4d37918e00dc94e53e57" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="EBinderModel.Cell" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EBinderModel.Department" Width="1.5" PointX="12" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EBinderModel.Part" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EBinderModel.Plant" Width="1.5" PointX="9.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="EBinderModel.Reference" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EBinderModel.ReferenceCategory" Width="1.5" PointX="12.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EBinderModel.ReferenceType" Width="1.5" PointX="15" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EBinderModel.Region" Width="1.5" PointX="7.5" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EBinderModel.User" Width="1.5" PointX="8.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EBinderModel.UserType" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="EBinderModel.FK_dbo_Cell_dbo_Department_DepartmentID" ManuallyRouted="false" />
+        <AssociationConnector Association="EBinderModel.FK_dbo_Cell_dbo_Part_Part_PartID" ManuallyRouted="false" />
+        <AssociationConnector Association="EBinderModel.FK_dbo_User_dbo_Cell_CellID" ManuallyRouted="false" />
+        <AssociationConnector Association="EBinderModel.FK_dbo_Department_dbo_Plant_PlantID" ManuallyRouted="false" />
+        <AssociationConnector Association="EBinderModel.FK_dbo_Plant_dbo_Region_RegionID" ManuallyRouted="false" />
+        <AssociationConnector Association="EBinderModel.FK_dbo_Reference_dbo_ReferenceType_ReferenceTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="EBinderModel.FK_dbo_ReferenceType_dbo_ReferenceCategory_ReferenceCategoryID" ManuallyRouted="false" />
+        <AssociationConnector Association="EBinderModel.FK_dbo_User_dbo_UserType_UserTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="EBinderModel.CellReferences" ManuallyRouted="false" />
+        <AssociationConnector Association="EBinderModel.DepartmentReferences" ManuallyRouted="false" />
+        <AssociationConnector Association="EBinderModel.HomePageReferences" ManuallyRouted="false" />
+        <AssociationConnector Association="EBinderModel.PartReferences" ManuallyRouted="false" />
+        <AssociationConnector Association="EBinderModel.PlantReferences" ManuallyRouted="false" />
+        <AssociationConnector Association="EBinderModel.ReferenceTypePlant" ManuallyRouted="false" />
+        <AssociationConnector Association="EBinderModel.RegionReferences" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

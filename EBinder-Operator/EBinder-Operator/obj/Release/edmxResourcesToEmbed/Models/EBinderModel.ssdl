@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EBinderModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'EbinderDB.dbo.Cell' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Cell">
+    <Key>
+      <PropertyRef Name="CellID" />
+    </Key>
+    <Property Name="CellID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Workcenter" Type="nvarchar" MaxLength="15" />
+    <Property Name="DepartmentID" Type="int" Nullable="false" />
+    <Property Name="Part_PartID" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'EbinderDB.dbo.CellReferences' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="CellReferences">
+    <Key>
+      <PropertyRef Name="ReferenceId" />
+      <PropertyRef Name="CellId" />
+    </Key>
+    <Property Name="ReferenceId" Type="int" Nullable="false" />
+    <Property Name="CellId" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'EbinderDB.dbo.Department' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="DepartmentID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="PlantID" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'EbinderDB.dbo.DepartmentReferences' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="DepartmentReferences">
+    <Key>
+      <PropertyRef Name="ReferenceId" />
+      <PropertyRef Name="DepartmentId" />
+    </Key>
+    <Property Name="ReferenceId" Type="int" Nullable="false" />
+    <Property Name="DepartmentId" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'EbinderDB.dbo.HomePageReferences' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="HomePageReferences">
+    <Key>
+      <PropertyRef Name="PlantId" />
+      <PropertyRef Name="ReferenceTypeId" />
+    </Key>
+    <Property Name="PlantId" Type="int" Nullable="false" />
+    <Property Name="ReferenceTypeId" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'EbinderDB.dbo.Part' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Part">
+    <Key>
+      <PropertyRef Name="PartID" />
+    </Key>
+    <Property Name="PartID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PartDesc" Type="nvarchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'EbinderDB.dbo.PartReferences' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="PartReferences">
+    <Key>
+      <PropertyRef Name="PartId" />
+      <PropertyRef Name="ReferenceId" />
+    </Key>
+    <Property Name="PartId" Type="int" Nullable="false" />
+    <Property Name="ReferenceId" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'EbinderDB.dbo.Plant' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Plant">
+    <Key>
+      <PropertyRef Name="PlantID" />
+    </Key>
+    <Property Name="PlantID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="RegionID" Type="int" Nullable="false" />
+    <Property Name="ContactEmail" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Language" Type="nvarchar(max)" />
+    <Property Name="CompanyNumbers" Type="nvarchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'EbinderDB.dbo.PlantReferences' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="PlantReferences">
+    <Key>
+      <PropertyRef Name="ReferenceId" />
+      <PropertyRef Name="PlantId" />
+    </Key>
+    <Property Name="ReferenceId" Type="int" Nullable="false" />
+    <Property Name="PlantId" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'EbinderDB.dbo.Reference' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Reference">
+    <Key>
+      <PropertyRef Name="ReferenceID" />
+    </Key>
+    <Property Name="ReferenceID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Number" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="URL" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FlagDate" Type="datetime" Nullable="false" />
+    <Property Name="ReferenceTypeID" Type="int" Nullable="false" />
+    <Property Name="DefaultPlantID" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'EbinderDB.dbo.ReferenceCategory' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ReferenceCategory">
+    <Key>
+      <PropertyRef Name="ReferenceCategoryID" />
+    </Key>
+    <Property Name="ReferenceCategoryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName_en" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="CategoryName_es" Type="nvarchar" MaxLength="40" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'EbinderDB.dbo.ReferenceType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ReferenceType">
+    <Key>
+      <PropertyRef Name="ReferenceTypeID" />
+    </Key>
+    <Property Name="ReferenceTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TypeName_en" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="TypeName_es" Type="nvarchar" MaxLength="25" />
+    <Property Name="ReferenceCategoryID" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'EbinderDB.dbo.ReferenceTypePlant' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ReferenceTypePlant">
+    <Key>
+      <PropertyRef Name="ReferenceType_ReferenceTypeID" />
+      <PropertyRef Name="Plant_PlantID" />
+    </Key>
+    <Property Name="ReferenceType_ReferenceTypeID" Type="int" Nullable="false" />
+    <Property Name="Plant_PlantID" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'EbinderDB.dbo.Region' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Region">
+    <Key>
+      <PropertyRef Name="RegionID" />
+    </Key>
+    <Property Name="RegionID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="25" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'EbinderDB.dbo.RegionReferences' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="RegionReferences">
+    <Key>
+      <PropertyRef Name="RegionId" />
+      <PropertyRef Name="ReferenceId" />
+    </Key>
+    <Property Name="RegionId" Type="int" Nullable="false" />
+    <Property Name="ReferenceId" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'EbinderDB.dbo.User' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="Username" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="CellID" Type="int" Nullable="false" />
+    <Property Name="UserTypeID" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'EbinderDB.dbo.UserType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="UserType">
+    <Key>
+      <PropertyRef Name="UserTypeID" />
+    </Key>
+    <Property Name="UserTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityContainer Name="EBinderModelStoreContainer">
+    <EntitySet Name="Cell" EntityType="Self.Cell" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Cell].[CellID] AS [CellID], 
+[Cell].[Name] AS [Name], 
+[Cell].[Workcenter] AS [Workcenter], 
+[Cell].[DepartmentID] AS [DepartmentID], 
+[Cell].[Part_PartID] AS [Part_PartID]
+FROM [dbo].[Cell] AS [Cell]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="CellReferences" EntityType="Self.CellReferences" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[CellReferences].[ReferenceId] AS [ReferenceId], 
+[CellReferences].[CellId] AS [CellId]
+FROM [dbo].[CellReferences] AS [CellReferences]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Department" EntityType="Self.Department" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Department].[DepartmentID] AS [DepartmentID], 
+[Department].[Name] AS [Name], 
+[Department].[PlantID] AS [PlantID]
+FROM [dbo].[Department] AS [Department]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="DepartmentReferences" EntityType="Self.DepartmentReferences" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[DepartmentReferences].[ReferenceId] AS [ReferenceId], 
+[DepartmentReferences].[DepartmentId] AS [DepartmentId]
+FROM [dbo].[DepartmentReferences] AS [DepartmentReferences]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="HomePageReferences" EntityType="Self.HomePageReferences" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[HomePageReferences].[PlantId] AS [PlantId], 
+[HomePageReferences].[ReferenceTypeId] AS [ReferenceTypeId]
+FROM [dbo].[HomePageReferences] AS [HomePageReferences]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Part" EntityType="Self.Part" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Part].[PartID] AS [PartID], 
+[Part].[PartDesc] AS [PartDesc]
+FROM [dbo].[Part] AS [Part]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PartReferences" EntityType="Self.PartReferences" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[PartReferences].[PartId] AS [PartId], 
+[PartReferences].[ReferenceId] AS [ReferenceId]
+FROM [dbo].[PartReferences] AS [PartReferences]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Plant" EntityType="Self.Plant" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Plant].[PlantID] AS [PlantID], 
+[Plant].[Name] AS [Name], 
+[Plant].[RegionID] AS [RegionID], 
+[Plant].[ContactEmail] AS [ContactEmail], 
+[Plant].[Language] AS [Language], 
+[Plant].[CompanyNumbers] AS [CompanyNumbers]
+FROM [dbo].[Plant] AS [Plant]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PlantReferences" EntityType="Self.PlantReferences" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[PlantReferences].[ReferenceId] AS [ReferenceId], 
+[PlantReferences].[PlantId] AS [PlantId]
+FROM [dbo].[PlantReferences] AS [PlantReferences]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Reference" EntityType="Self.Reference" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Reference].[ReferenceID] AS [ReferenceID], 
+[Reference].[Title] AS [Title], 
+[Reference].[Number] AS [Number], 
+[Reference].[URL] AS [URL], 
+[Reference].[FlagDate] AS [FlagDate], 
+[Reference].[ReferenceTypeID] AS [ReferenceTypeID], 
+[Reference].[DefaultPlantID] AS [DefaultPlantID]
+FROM [dbo].[Reference] AS [Reference]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ReferenceCategory" EntityType="Self.ReferenceCategory" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[ReferenceCategory].[ReferenceCategoryID] AS [ReferenceCategoryID], 
+[ReferenceCategory].[CategoryName_en] AS [CategoryName_en], 
+[ReferenceCategory].[CategoryName_es] AS [CategoryName_es]
+FROM [dbo].[ReferenceCategory] AS [ReferenceCategory]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ReferenceType" EntityType="Self.ReferenceType" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[ReferenceType].[ReferenceTypeID] AS [ReferenceTypeID], 
+[ReferenceType].[TypeName_en] AS [TypeName_en], 
+[ReferenceType].[TypeName_es] AS [TypeName_es], 
+[ReferenceType].[ReferenceCategoryID] AS [ReferenceCategoryID]
+FROM [dbo].[ReferenceType] AS [ReferenceType]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ReferenceTypePlant" EntityType="Self.ReferenceTypePlant" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[ReferenceTypePlant].[ReferenceType_ReferenceTypeID] AS [ReferenceType_ReferenceTypeID], 
+[ReferenceTypePlant].[Plant_PlantID] AS [Plant_PlantID]
+FROM [dbo].[ReferenceTypePlant] AS [ReferenceTypePlant]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Region" EntityType="Self.Region" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Region].[RegionID] AS [RegionID], 
+[Region].[Name] AS [Name]
+FROM [dbo].[Region] AS [Region]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="RegionReferences" EntityType="Self.RegionReferences" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[RegionReferences].[RegionId] AS [RegionId], 
+[RegionReferences].[ReferenceId] AS [ReferenceId]
+FROM [dbo].[RegionReferences] AS [RegionReferences]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="User" EntityType="Self.User" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[User].[Username] AS [Username], 
+[User].[CellID] AS [CellID], 
+[User].[UserTypeID] AS [UserTypeID]
+FROM [dbo].[User] AS [User]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="UserType" EntityType="Self.UserType" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[UserType].[UserTypeID] AS [UserTypeID], 
+[UserType].[Name] AS [Name]
+FROM [dbo].[UserType] AS [UserType]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
